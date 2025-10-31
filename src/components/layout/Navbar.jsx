@@ -6,10 +6,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Inicio", href: "#home" },
+    { name: "Sobre mí", href: "#about" },
+    { name: "Proyectos", href: "#projects" },
+    { name: "Contacto", href: "#contact" },
   ];
 
   // Detectar scroll para efectos
@@ -68,7 +68,7 @@ const Navbar = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-hover)] to-[var(--color-accent)] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <span className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-text)] to-[var(--color-primary)]">
-                  Portfolio
+                  Portafolio
                 </span>
               </a>
             </div>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 onClick={handleDownloadResume}
                 className="group relative bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2 transform hover:-translate-y-0.5 overflow-hidden"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 hover:cursor-pointer">
                   <HiDownload className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" />
                   Resume
                 </span>

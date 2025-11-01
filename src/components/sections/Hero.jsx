@@ -42,10 +42,7 @@ const Hero = () => {
           </h1>
 
           {/* Título compacto */}
-          <div
-            className="flex items-center justify-center gap-2 mb-5 animate-fade-in-up"
-            style={{ animationDelay: "0.1s" }}
-          >
+          <div className="flex items-center justify-center gap-2 mb-5 animate-fade-in-up">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary"></div>
             <h2 className="text-lg sm:text-xl md:text-2xl text-text-secondary font-light">
               Roberto Mattus
@@ -54,10 +51,7 @@ const Hero = () => {
           </div>
 
           {/* Descripción compacta */}
-          <p
-            className="text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: "0.2s" }}
-          >
+          <p className="text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up">
             Transformo ideas en{" "}
             <span className="text-primary font-semibold">
               experiencias digitales excepcionales
@@ -66,10 +60,7 @@ const Hero = () => {
           </p>
 
           {/* Botones compactos */}
-          <div
-            className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-fade-in-up"
-            style={{ animationDelay: "0.3s" }}
-          >
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-fade-in-up">
             <a
               href="#projects"
               className="group relative px-6 py-2.5 bg-primary hover:bg-primary-hover text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden"
@@ -105,10 +96,7 @@ const Hero = () => {
           </div>
 
           {/* Social Icons compactos */}
-          <div
-            className="flex justify-center items-center gap-4 mb-8 animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
-          >
+          <div className="flex justify-center items-center gap-4 mb-8 animate-fade-in">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-text-secondary/50"></div>
 
             <a
@@ -149,7 +137,6 @@ const Hero = () => {
           <a
             href="#about"
             className="inline-flex flex-col items-center gap-1 text-text-secondary hover:text-primary transition-colors duration-300 animate-fade-in cursor-pointer group"
-            style={{ animationDelay: "0.5s" }}
           >
             <span className="text-xs font-medium">Explorar</span>
             <HiArrowDown

@@ -101,7 +101,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Mobile menu button - ORIGINAL */}
+            {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -127,7 +127,7 @@ const Navbar = () => {
         ></div>
       </nav>
 
-      {/* Overlay con backdrop oscuro - ORIGINAL */}
+      {/* Overlay con backdrop oscuro */}
       <div
         className={`fixed inset-0 bg-black md:hidden z-40 transition-opacity duration-400 ${
           isMenuOpen ? "opacity-50 visible" : "opacity-0 invisible"
@@ -136,7 +136,7 @@ const Navbar = () => {
         aria-hidden="true"
       />
 
-      {/* Mobile menu - COMPLETAMENTE ORIGINAL */}
+      {/* Mobile menu */}
       <div
         className={`fixed top-16 left-0 right-0 bg-white md:hidden z-40 shadow-lg transition-all duration-500 ease-out ${
           isMenuOpen
@@ -145,17 +145,11 @@ const Navbar = () => {
         }`}
       >
         <div className="px-4 pt-6 pb-6 space-y-3 max-h-[calc(100vh-4rem)] overflow-y-auto">
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`block px-4 py-3 rounded-lg text-base font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-background-secondary)] transition-all duration-200 text-center ${
-                isMenuOpen ? "animate-fade-in-up" : ""
-              }`}
-              style={{
-                animationDelay: isMenuOpen ? `${index * 80}ms` : "0ms",
-                animationFillMode: "backwards",
-              }}
+              className="block px-4 py-3 rounded-lg text-base font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-background-secondary)] transition-all duration-200 text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
@@ -164,7 +158,7 @@ const Navbar = () => {
           <div
             className={`pt-2 ${isMenuOpen ? "animate-fade-in-up" : ""}`}
             style={{
-              animationDelay: isMenuOpen ? `${navLinks.length * 80}ms` : "0ms",
+              animationDelay: isMenuOpen ? "0.2s" : "0ms",
               animationFillMode: "backwards",
             }}
           >

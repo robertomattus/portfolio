@@ -1,170 +1,177 @@
+import {
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaDocker,
+  FaGitAlt,
+  FaDatabase,
+  FaFigma,
+  FaCode,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+} from "react-icons/si";
+
 const About = () => {
-  const skills = {
-    Frontend: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "JavaScript",
-      "HTML/CSS",
-    ],
-    Backend: [
-      "Node.js",
-      "Express",
-      "Python",
-      "PostgreSQL",
-      "MongoDB",
-      "REST APIs",
-    ],
-    Tools: ["Git", "Docker", "AWS", "Figma", "VS Code", "Postman"],
-    Soft: [
-      "Trabajo en equipo",
-      "Resolución de problemas",
-      "Comunicación",
-      "Adaptabilidad",
-    ],
-  };
+  const skills = [
+    { name: "JavaScript", icon: <SiJavascript className="text-xl" /> },
+    { name: "TypeScript", icon: <SiTypescript className="text-xl" /> },
+    { name: "React", icon: <FaReact className="text-xl" /> },
+    { name: "Node.js", icon: <FaNodeJs className="text-xl" /> },
+    { name: "Python", icon: <FaPython className="text-xl" /> },
+    { name: "Docker", icon: <FaDocker className="text-xl" /> },
+    { name: "Figma", icon: <FaFigma className="text-xl" /> },
+    { name: "Git", icon: <FaGitAlt className="text-xl" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-xl" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-xl" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-xl" /> },
+    { name: "REST APIs", icon: <FaCode className="text-xl" /> },
+  ];
 
   return (
-    <section
-      id="about"
-      className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden"
-    >
-      {/* Fondo con gradiente sutil */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background-secondary to-background">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-        </div>
-      </div>
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
-
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="space-y-12">
-          {/* Sección de introducción */}
-          <div className="text-center max-w-3xl mx-auto space-y-6 animate-fade-in-up">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full backdrop-blur-sm">
-              <span className="text-primary font-medium text-xs">Sobre Mí</span>
-            </div>
-
-            {/* Título */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-text via-primary to-accent">
-                Construyendo experiencias digitales excepcionales
-              </span>
-            </h2>
-
-            {/* Descripción */}
-            <div className="space-y-4 text-text-secondary text-base sm:text-lg leading-relaxed">
-              <p>
-                Soy un ingeniero en desarrollo de software apasionado por crear
-                soluciones tecnológicas innovadoras que{" "}
-                <span className="text-primary font-semibold">
-                  transformen ideas en realidad
-                </span>
-                .
-              </p>
-
-              <p>
-                Con experiencia en desarrollo full-stack, me especializo en
-                construir aplicaciones web modernas, escalables y centradas en
-                el usuario. Mi enfoque combina{" "}
-                <span className="text-accent font-semibold">código limpio</span>
-                ,{" "}
-                <span className="text-accent font-semibold">
-                  mejores prácticas
-                </span>{" "}
-                y un diseño intuitivo.
+    <section id="about" className="relative flex-1 bg-background">
+      <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-10 md:py-20">
+        <div className="flex flex-col max-w-6xl w-full flex-1">
+          {/* Header Section */}
+          <div className="flex flex-wrap justify-between gap-4 items-center mb-12 animate-fade-in-up">
+            <div className="flex flex-col gap-3">
+              <h1 className="text-text text-4xl sm:text-5xl font-black leading-tight tracking-tight">
+                Sobre mí
+              </h1>
+              <p className="text-text-secondary text-base font-normal leading-normal">
+                Un desarrollador apasionado por crear soluciones eficientes y
+                modernas.
               </p>
             </div>
           </div>
 
-          {/* Sección de habilidades */}
-          <div className="space-y-8 animate-fade-in">
-            {/* Título de habilidades */}
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-text">
-                Habilidades & Tecnologías
-              </h3>
-              <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-            </div>
-
-            {/* Grid de habilidades */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {Object.entries(skills).map(([category, items], idx) => (
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20">
+            {/* Left Column: Bio and Photo */}
+            <div
+              className="flex flex-col gap-8 animate-fade-in-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              {/* Photo and Intro */}
+              <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <div
-                  key={category}
-                  className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-xl transition-all duration-300"
-                  style={{ animationDelay: `${idx * 0.1}s` }}
-                >
-                  {/* Decoración de fondo en hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  {/* Contenido */}
-                  <div className="relative space-y-4">
-                    {/* Título de categoría */}
-                    <div className="flex items-center gap-2">
-                      <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent"></div>
-                      <h4 className="text-lg font-bold text-primary">
-                        {category}
-                      </h4>
-                      <div className="h-px flex-1 bg-gradient-to-l from-primary/50 to-transparent"></div>
-                    </div>
-
-                    {/* Lista de habilidades */}
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((skill, index) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1.5 bg-gradient-to-r from-background to-background-secondary text-text-secondary text-sm font-medium rounded-lg border border-primary/10 hover:border-primary/30 hover:text-primary hover:shadow-md transition-all duration-300 cursor-default"
-                          style={{ animationDelay: `${index * 0.05}s` }}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Decoración esquina */}
-                  <div className="absolute top-0 right-0 w-12 h-12 bg-primary/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats opcionales */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 animate-fade-in">
-            {[
-              { value: "5+", label: "Años de experiencia" },
-              { value: "20+", label: "Proyectos completados" },
-              { value: "10+", label: "Clientes satisfechos" },
-              { value: "100%", label: "Dedicación" },
-            ].map((stat, idx) => (
-              <div
-                key={stat.label}
-                className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300"
-                style={{ animationDelay: `${idx * 0.1}s` }}
-              >
-                <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-text-secondary mt-1">
-                  {stat.label}
+                  className="bg-center bg-no-repeat aspect-square bg-cover rounded-xl min-h-32 w-32 shrink-0 border-2 border-primary/20 shadow-lg"
+                  role="img"
+                  aria-label="Fotografía profesional"
+                  style={{
+                    backgroundImage:
+                      'url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop")',
+                  }}
+                />
+                <div className="flex flex-col gap-4">
+                  <p className="text-text-secondary text-base font-normal leading-relaxed">
+                    Hola, soy un desarrollador de software con una gran pasión
+                    por crear aplicaciones web intuitivas y de alto rendimiento.
+                    Con experiencia en el desarrollo full-stack, me especializo
+                    en la construcción de interfaces de usuario dinámicas con
+                    React y en la creación de APIs robustas con Node.js y
+                    Python.
+                  </p>
                 </div>
               </div>
-            ))}
+
+              {/* Additional Bio Text */}
+              <p className="text-text-secondary text-base font-normal leading-relaxed">
+                Mi filosofía se centra en escribir{" "}
+                <span className="text-primary font-semibold">
+                  código limpio, escalable y bien documentado
+                </span>
+                . Disfruto colaborando en equipos ágiles para resolver problemas
+                complejos y transformar ideas en productos tangibles. Siempre
+                estoy aprendiendo nuevas tecnologías para mantenerme al día con
+                las últimas tendencias de la industria.
+              </p>
+
+              <p className="text-text-secondary text-base font-normal leading-relaxed">
+                Fuera del trabajo, me gusta contribuir a proyectos de{" "}
+                <span className="text-accent font-semibold">
+                  código abierto
+                </span>{" "}
+                y explorar nuevos senderos para hacer senderismo, lo cual me
+                ayuda a despejar la mente y encontrar inspiración.
+              </p>
+            </div>
+
+            {/* Right Column: Skills */}
+            <div
+              className="flex flex-col animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              <h2 className="text-text text-[22px] font-bold leading-tight tracking-tight mb-6">
+                Habilidades Técnicas
+              </h2>
+
+              <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-3">
+                {skills.map((skill, index) => (
+                  <div
+                    key={skill.name}
+                    className="flex flex-1 gap-3 rounded-lg border border-primary/20 bg-white hover:bg-background-secondary p-4 items-center shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 group"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    <div className="text-primary group-hover:text-primary-hover transition-colors">
+                      {skill.icon}
+                    </div>
+                    <h3 className="text-text text-sm font-bold leading-tight group-hover:text-primary transition-colors">
+                      {skill.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+
+              {/* Stats Section */}
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="text-3xl font-black text-primary">5+</div>
+                  <div className="text-sm text-text-secondary">
+                    Años de experiencia
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300">
+                  <div className="text-3xl font-black text-primary">20+</div>
+                  <div className="text-sm text-text-secondary">
+                    Proyectos completados
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Optional: Download CV Button */}
+          <div
+            className="flex justify-center mt-12 animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              Descargar CV
+            </a>
           </div>
         </div>
       </div>
-
-      {/* Decoración inferior */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
     </section>
   );
 };

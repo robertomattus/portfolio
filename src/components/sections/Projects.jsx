@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import ProjectModal from "./ProjectModal"; // Importamos el nuevo componente
+import { FaGithub } from "react-icons/fa";
+import ProjectModal from "./ProjectModal";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -21,7 +21,7 @@ const Projects = () => {
         "/projects/ecommerce.jpg",
         "/projects/ecommerce-2.jpg",
         "/projects/ecommerce-3.jpg",
-      ], // Imágenes adicionales
+      ],
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       github: "https://github.com/usuario/proyecto",
       demo: "https://proyecto-demo.com",
@@ -35,11 +35,6 @@ const Projects = () => {
         "Sistema de búsqueda y filtros avanzados",
       ],
       role: "Full Stack Developer",
-      techStack: {
-        frontend: ["React", "Redux", "Tailwind CSS"],
-        backend: ["Node.js", "Express", "MongoDB"],
-        other: ["Stripe API", "JWT", "Cloudinary"],
-      },
     },
     {
       id: 2,
@@ -62,11 +57,6 @@ const Projects = () => {
         "Vista de calendario integrada",
       ],
       role: "Frontend Developer",
-      techStack: {
-        frontend: ["React", "Context API", "Tailwind CSS"],
-        backend: ["Firebase"],
-        other: ["Firebase Auth", "Firestore", "Cloud Functions"],
-      },
     },
     {
       id: 3,
@@ -94,22 +84,18 @@ const Projects = () => {
         "Integración con múltiples fuentes de datos",
       ],
       role: "Frontend Developer & Data Visualization Specialist",
-      techStack: {
-        frontend: ["Next.js", "TypeScript", "Chart.js", "D3.js"],
-        backend: ["Next.js API Routes"],
-        other: ["WebSockets", "Redis", "PostgreSQL"],
-      },
     },
   ];
 
-  const openModal = (project) => {
+  const openModal = (project, index) => {
     setSelectedProject(project);
+    setCurrentProjectIndex(index);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setSelectedProject(null), 300); // Espera a que termine la animación
+    setTimeout(() => setSelectedProject(null), 300);
   };
 
   const handleNext = () => {
@@ -128,130 +114,82 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen py-20 overflow-hidden bg-background"
+      className="relative flex-1 px-4 sm:px-6 lg:px-8 py-10 md:py-16 bg-background"
     >
-      {/* Fondo con gradiente sutil */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background-secondary to-background">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-        </div>
-      </div>
-
-      {/* Grid pattern sutil */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
-
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header de la sección */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full mb-6 backdrop-blur-sm">
-            <span className="text-primary font-medium text-xs">
-              Proyectos destacados
-            </span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-text via-primary to-accent">
+      <div className="mx-auto max-w-7xl">
+        {/* Page Heading */}
+        <div className="flex flex-wrap justify-between gap-4 px-4 pb-8 animate-fade-in-up">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
               Mis Proyectos
-            </span>
-          </h2>
-
-          <div className="flex items-center justify-center gap-2 mb-5">
-            <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary"></div>
-            <p className="text-base sm:text-lg text-text-secondary">
-              Explora mi trabajo reciente
+            </h1>
+            <p className="text-base font-normal leading-normal text-text-secondary">
+              Una selección de proyectos que muestran mis habilidades en
+              desarrollo y diseño.
             </p>
-            <div className="h-px w-8 bg-gradient-to-l from-transparent to-primary"></div>
           </div>
         </div>
 
-        {/* Grid de proyectos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 p-4">
           {projects.map((project, index) => (
-            <div
+            <article
               key={project.id}
               onClick={() => openModal(project, index)}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary/10 hover:border-primary/30 transform hover:-translate-y-2 cursor-pointer"
+              className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 cursor-pointer animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Badge de destacado */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-primary text-white text-xs font-medium rounded-full shadow-lg">
-                  Destacado
-                </div>
-              )}
-
-              {/* Imagen del proyecto */}
-              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-4xl opacity-20">📱</span>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* Indicador de "Ver más" */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="bg-white/90 text-primary px-4 py-2 rounded-lg font-semibold text-sm">
-                    Ver detalles →
-                  </span>
-                </div>
+              {/* Image Container */}
+              <div className="overflow-hidden">
+                <div
+                  className="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  style={{ backgroundImage: `url(${project.image})` }}
+                  role="img"
+                  aria-label={project.title}
+                />
               </div>
 
-              {/* Contenido */}
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-text mb-2 group-hover:text-primary transition-colors">
+              {/* Content */}
+              <div className="flex flex-1 flex-col p-5">
+                {/* Title */}
+                <h3 className="text-lg font-semibold leading-normal text-text group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-text-secondary text-sm mb-4 line-clamp-2">
+                {/* Description */}
+                <p className="text-sm font-normal leading-normal text-text-secondary mt-2 line-clamp-2">
                   {project.description}
                 </p>
 
-                {/* Tecnologías */}
-                <div className="flex flex-wrap gap-2">
+                {/* Technologies */}
+                <div className="mt-4 flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium"
+                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-
-              {/* Overlay decorativo */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/20 rounded-2xl transition-all duration-300 pointer-events-none"></div>
-            </div>
+            </article>
           ))}
         </div>
 
-        {/* Botón para ver más proyectos (opcional) */}
-        <div className="text-center mt-12 animate-fade-in">
+        {/* CTA Button - Ver más proyectos */}
+        <div className="flex justify-center mt-12 px-4 animate-fade-in">
           <a
             href="https://github.com/robertomattus"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm hover:bg-white text-primary font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary/20 hover:border-primary transform hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-background-secondary text-text font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border-2 border-primary/10 hover:border-primary/30 transform hover:-translate-y-1"
           >
+            <FaGithub size={20} />
             Ver más proyectos en GitHub
-            <FaGithub size={18} />
           </a>
         </div>
       </div>
-
-      {/* Decoración inferior */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
 
       {/* Modal */}
       {selectedProject && (

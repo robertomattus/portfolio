@@ -1,201 +1,267 @@
-import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 
-const ProjectModal = ({ project, isOpen, onClose }) => {
+const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Cerrar con tecla ESC
+  // Cerrar con tecla ESC y navegar con flechas
   useEffect(() => {
-    const handleEsc = (e) => {
+    const handleKeyDown = (e) => {
       if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft" && onPrev) onPrev();
+      if (e.key === "ArrowRight" && onNext) onNext();
     };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [onClose]);
 
-  // Prevenir scroll del body cuando el modal está abierto
-  useEffect(() => {
     if (isOpen) {
+      window.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
     }
+
     return () => {
+      window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, onClose, onNext, onPrev]);
 
-  if (!isOpen) return null;
+  // Reset image index cuando cambia el proyecto
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project]);
+
+  if (!isOpen || !project) return null;
+
+  const images = project.images || [project.image];
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
+      {/* Background Overlay */}
       <div
-        className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden animate-scale-in"
+        className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
+      />
+
+      {/* Navigation Buttons: Previous/Next Project */}
+      {onPrev && (
+        <button
+          onClick={onPrev}
+          className="fixed left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white shadow-lg text-text-secondary hover:text-primary hover:bg-background-secondary transition-all duration-300 hover:scale-110 hidden lg:block"
+          aria-label="Proyecto anterior"
+        >
+          <FaChevronLeft className="text-2xl" />
+        </button>
+      )}
+
+      {onNext && (
+        <button
+          onClick={onNext}
+          className="fixed right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white shadow-lg text-text-secondary hover:text-primary hover:bg-background-secondary transition-all duration-300 hover:scale-110 hidden lg:block"
+          aria-label="Proyecto siguiente"
+        >
+          <FaChevronRight className="text-2xl" />
+        </button>
+      )}
+
+      {/* Modal Container */}
+      <div
+        className="relative z-50 flex h-full max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-2xl animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Botón cerrar */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-white/90 hover:bg-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-        >
-          <FaTimes className="text-gray-600" size={20} />
-        </button>
+        {/* Toolbar */}
+        <div className="flex shrink-0 items-center justify-between gap-2 px-4 py-3 border-b border-primary/10 bg-background-secondary/50">
+          <div className="flex gap-2">
+            {onPrev && (
+              <button
+                onClick={onPrev}
+                className="p-2 text-text-secondary hover:text-primary hover:bg-white rounded-lg transition-all duration-300"
+                title="Proyecto anterior"
+              >
+                <FaChevronLeft />
+              </button>
+            )}
+            {onNext && (
+              <button
+                onClick={onNext}
+                className="p-2 text-text-secondary hover:text-primary hover:bg-white rounded-lg transition-all duration-300"
+                title="Proyecto siguiente"
+              >
+                <FaChevronRight />
+              </button>
+            )}
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 text-text-secondary hover:text-primary hover:bg-white rounded-lg transition-all duration-300"
+            title="Cerrar"
+          >
+            <FaTimes />
+          </button>
+        </div>
 
-        {/* Contenido con scroll */}
-        <div className="overflow-y-auto max-h-[90vh] custom-scrollbar">
-          {/* Galería de imágenes */}
-          <div className="relative h-80 bg-gradient-to-br from-primary/20 to-accent/20">
-            <img
-              src={project.images[currentImageIndex]}
-              alt={`${project.title} - ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover"
-            />
+        {/* Main Content Area */}
+        <div className="flex flex-col lg:flex-row flex-1 overflow-y-auto custom-scrollbar">
+          {/* Left Column: Carousel/Image */}
+          <div className="w-full lg:w-1/2 p-6 flex flex-col gap-4 bg-background-secondary/30">
+            {/* Main Image */}
+            <div
+              className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col shadow-lg border border-primary/10 overflow-hidden group"
+              style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
+              role="img"
+              aria-label={project.title}
+            >
+              <div className="w-full h-full bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
 
-            {/* Navegación de imágenes */}
-            {project.images.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {project.images.map((_, index) => (
+            {/* Pagination Dots */}
+            {images.length > 1 && (
+              <div className="flex justify-center items-center gap-2">
+                {images.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`h-2 rounded-full transition-all duration-300 ${
                       index === currentImageIndex
-                        ? "bg-white w-8"
-                        : "bg-white/50 hover:bg-white/75"
+                        ? "bg-primary w-8"
+                        : "bg-text-secondary/30 hover:bg-primary/50 w-2"
                     }`}
+                    aria-label={`Ver imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Thumbnails */}
+            {images.length > 1 && (
+              <div className="flex overflow-x-auto gap-3 pb-2 custom-scrollbar">
+                {images.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`flex-shrink-0 w-40 aspect-video bg-center bg-cover rounded-lg transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? "border-2 border-primary opacity-100 shadow-lg"
+                        : "opacity-60 hover:opacity-100 border-2 border-transparent hover:border-primary/30"
+                    }`}
+                    style={{ backgroundImage: `url(${img})` }}
+                    aria-label={`Miniatura ${index + 1}`}
                   />
                 ))}
               </div>
             )}
           </div>
 
-          {/* Contenido del modal */}
-          <div className="p-8">
-            {/* Badge destacado */}
-            {project.featured && (
-              <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-medium rounded-full mb-4">
-                Proyecto Destacado
-              </span>
-            )}
-
-            {/* Título */}
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              {project.title}
-            </h2>
-
-            {/* Descripción completa */}
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              {project.fullDescription}
-            </p>
-
-            {/* Role */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                Mi Rol
-              </h3>
-              <p className="text-primary font-medium">{project.role}</p>
+          {/* Right Column: Details */}
+          <div className="w-full lg:w-1/2 p-6 flex flex-col gap-6">
+            {/* Header */}
+            <div className="flex flex-col gap-3 animate-fade-in-up">
+              {project.featured && (
+                <span className="inline-block w-fit px-3 py-1.5 bg-primary/10 text-primary text-xs font-semibold rounded-full border border-primary/20">
+                  ⭐ Proyecto Destacado
+                </span>
+              )}
+              <h2 className="text-text text-4xl font-black leading-tight tracking-tight">
+                {project.title}
+              </h2>
+              <p className="text-text-secondary text-base font-normal leading-relaxed">
+                {project.fullDescription || project.description}
+              </p>
             </div>
 
             {/* Key Features */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Características Principales
-              </h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {project.keyFeatures.map((feature, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 text-gray-600"
-                  >
-                    <span className="text-primary mt-1">✓</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {project.keyFeatures && project.keyFeatures.length > 0 && (
+              <div
+                className="animate-fade-in-up"
+                style={{ animationDelay: "0.1s" }}
+              >
+                <h3 className="text-text text-lg font-bold leading-tight pb-2">
+                  Características Principales
+                </h3>
+                <div className="border-t border-primary/10 pt-3 space-y-2">
+                  {project.keyFeatures.map((feature, index) => (
+                    <label
+                      key={index}
+                      className="flex gap-x-3 py-1 flex-row cursor-default group"
+                    >
+                      <div className="relative flex items-center justify-center h-5 w-5 rounded border-2 border-primary bg-primary mt-0.5">
+                        <svg
+                          className="w-3 h-3 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z" />
+                        </svg>
+                      </div>
+                      <p className="text-text text-base font-normal leading-normal group-hover:text-primary transition-colors">
+                        {feature}
+                      </p>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
 
-            {/* Technology Stack */}
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Stack Tecnológico
-              </h3>
-              <div className="space-y-3">
-                {project.techStack.frontend && (
-                  <div>
-                    <p className="text-sm font-medium text-gray-500 mb-2">
-                      Frontend
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.frontend.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-lg font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {project.techStack.backend && (
-                  <div>
-                    <p className="text-sm font-medium text-gray-500 mb-2">
-                      Backend
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.backend.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-lg font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {project.techStack.other && (
-                  <div>
-                    <p className="text-sm font-medium text-gray-500 mb-2">
-                      Otras Tecnologías
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.other.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-lg font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
+            {/* Role & Tech Stack */}
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
+              {/* Role */}
+              {project.role && (
+                <div>
+                  <h3 className="text-text text-lg font-bold leading-tight pb-2">
+                    Mi Rol
+                  </h3>
+                  <p className="text-text-secondary text-sm font-normal leading-relaxed border-t border-primary/10 pt-3">
+                    {project.role}
+                  </p>
+                </div>
+              )}
+
+              {/* Technology Stack */}
+              <div className={project.role ? "" : "sm:col-span-2"}>
+                <h3 className="text-text text-lg font-bold leading-tight pb-2">
+                  Stack Tecnológico
+                </h3>
+                <div className="flex flex-wrap gap-2 border-t border-primary/10 pt-3">
+                  {project.technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="text-xs font-semibold text-primary bg-primary/10 hover:bg-primary/20 py-1.5 px-3 rounded-lg border border-primary/20 transition-colors duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Botones de acción */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-3 px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                <FaGithub size={20} />
-                Ver Código
-              </a>
+            {/* Action Buttons */}
+            <div
+              className="flex flex-col sm:flex-row gap-4 pt-4 mt-auto animate-fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-3 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="flex-1 flex items-center justify-center gap-2 text-center font-bold text-white bg-primary hover:bg-primary-hover px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <FaExternalLinkAlt size={18} />
+                <FaExternalLinkAlt size={16} />
                 Ver Demo
+              </a>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 text-center font-bold text-text bg-background-secondary hover:bg-text hover:text-white border-2 border-text/20 hover:border-text px-6 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+              >
+                <FaGithub size={18} />
+                Ver Código
               </a>
             </div>
           </div>

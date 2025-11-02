@@ -5,6 +5,7 @@ import ProjectModal from "./ProjectModal"; // Importamos el nuevo componente
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
   // Array de proyectos - ACTUALIZADO con más información
   const projects = [
@@ -111,6 +112,19 @@ const Projects = () => {
     setTimeout(() => setSelectedProject(null), 300); // Espera a que termine la animación
   };
 
+  const handleNext = () => {
+    const nextIndex = (currentProjectIndex + 1) % projects.length;
+    setSelectedProject(projects[nextIndex]);
+    setCurrentProjectIndex(nextIndex);
+  };
+
+  const handlePrev = () => {
+    const prevIndex =
+      (currentProjectIndex - 1 + projects.length) % projects.length;
+    setSelectedProject(projects[prevIndex]);
+    setCurrentProjectIndex(prevIndex);
+  };
+
   return (
     <section
       id="projects"
@@ -159,7 +173,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              onClick={() => openModal(project)}
+              onClick={() => openModal(project, index)}
               className="group relative bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary/10 hover:border-primary/30 transform hover:-translate-y-2 cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -245,6 +259,8 @@ const Projects = () => {
           project={selectedProject}
           isOpen={isModalOpen}
           onClose={closeModal}
+          onNext={handleNext}
+          onPrev={handlePrev}
         />
       )}
     </section>

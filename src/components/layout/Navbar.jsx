@@ -61,13 +61,13 @@ const Navbar = () => {
                 href="#home"
                 className="group flex items-center space-x-2 transition-transform duration-300 hover:scale-105"
               >
-                <div className="relative w-8 h-8 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
-                  <span className="text-white font-bold text-xl relative z-10">
+                <div className="relative w-9 h-9 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-300">
+                  <span className="text-white font-bold text-lg relative z-10">
                     P
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-hover)] to-[var(--color-accent)] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <span className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-text)] to-[var(--color-primary)]">
+                <span className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-text)] to-[var(--color-primary)]">
                   Portafolio
                 </span>
               </a>
@@ -91,11 +91,11 @@ const Navbar = () => {
             <div className="hidden md:flex md:items-center">
               <button
                 onClick={handleDownloadResume}
-                className="group relative bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2 transform hover:-translate-y-0.5 overflow-hidden"
+                className="group relative bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2 transform hover:-translate-y-0.5 overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2 hover:cursor-pointer">
                   <HiDownload className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" />
-                  Resume
+                  Descargar CV
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-hover)] to-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
@@ -149,7 +149,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="block px-4 py-3 rounded-lg text-base font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-background-secondary)] transition-all duration-200 text-center"
+              className="block px-4 py-3 rounded-lg text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-background-secondary)] transition-all duration-200 text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}
@@ -167,10 +167,10 @@ const Navbar = () => {
                 handleDownloadResume();
                 setIsMenuOpen(false);
               }}
-              className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
+              className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
             >
-              <HiDownload className="w-5 h-5" />
-              Resume
+              <HiDownload className="w-4 h-4" />
+              Descargar CV
             </button>
           </div>
         </div>

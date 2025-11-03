@@ -34,24 +34,24 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Nombre más compacto */}
+          {/* Título principal */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-up">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-text via-primary to-accent">
               Ingeniero en desarrollo de software
             </span>
           </h1>
 
-          {/* Título compacto */}
-          <div className="flex items-center justify-center gap-2 mb-5 animate-fade-in-up">
+          {/* Nombre */}
+          <div className="flex items-center justify-center gap-2 mb-6 animate-fade-in-up">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary"></div>
-            <h2 className="text-lg sm:text-xl md:text-2xl text-text-secondary font-light">
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-text-secondary font-light">
               Roberto Mattus
             </h2>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-primary"></div>
           </div>
 
-          {/* Descripción compacta */}
-          <p className="text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up">
+          {/* Descripción */}
+          <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up">
             Transformo ideas en{" "}
             <span className="text-primary font-semibold">
               experiencias digitales excepcionales
@@ -59,16 +59,16 @@ const Hero = () => {
             . Soluciones web modernas y escalables.
           </p>
 
-          {/* Botones compactos */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10 animate-fade-in-up">
+          {/* Botones */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up">
             <a
               href="#projects"
-              className="group relative px-6 py-2.5 bg-primary hover:bg-primary-hover text-white text-sm font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden"
+              className="group relative px-8 py-3 bg-primary hover:bg-primary-hover text-white text-base font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Ver proyectos
                 <svg
-                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -86,54 +86,54 @@ const Hero = () => {
 
             <a
               href="#contact"
-              className="group relative px-6 py-2.5 bg-white/80 backdrop-blur-sm hover:bg-white text-primary text-sm font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary/20 hover:border-primary transform hover:-translate-y-0.5"
+              className="group relative px-8 py-3 bg-white/80 backdrop-blur-sm hover:bg-white text-primary text-base font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary/20 hover:border-primary transform hover:-translate-y-0.5"
             >
               <span className="flex items-center justify-center gap-2">
                 Contáctame
-                <FaEnvelope className="text-sm transform group-hover:rotate-12 transition-transform" />
+                <FaEnvelope className="text-base transform group-hover:rotate-12 transition-transform" />
               </span>
             </a>
           </div>
 
-          {/* Social Icons compactos */}
-          <div className="flex justify-center items-center gap-4 mb-8 animate-fade-in">
+          {/* Social Icons */}
+          <div className="flex justify-center items-center gap-4 mb-10 animate-fade-in">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-text-secondary/50"></div>
 
             <a
               href="https://github.com/robertomattus"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-2 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
+              className="group relative p-2.5 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
               aria-label="GitHub"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-hover rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <FaGithub size={20} className="relative z-10" />
+              <FaGithub size={22} className="relative z-10" />
             </a>
 
             <a
               href="https://linkedin.com/in/robertomattus"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-2 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
+              className="group relative p-2.5 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
               aria-label="LinkedIn"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <FaLinkedin size={20} className="relative z-10" />
+              <FaLinkedin size={22} className="relative z-10" />
             </a>
 
             <a
               href="mailto:roberto@example.com"
-              className="group relative p-2 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
+              className="group relative p-2.5 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
               aria-label="Email"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent to-primary rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <FaEnvelope size={20} className="relative z-10" />
+              <FaEnvelope size={22} className="relative z-10" />
             </a>
 
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-text-secondary/50"></div>
           </div>
 
-          {/* Scroll indicator compacto */}
+          {/* Scroll indicator */}
           <a
             href="#about"
             className="inline-flex flex-col items-center gap-1 text-text-secondary hover:text-primary transition-colors duration-300 animate-fade-in cursor-pointer group"

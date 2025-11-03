@@ -15,34 +15,45 @@ import {
   SiMongodb,
   SiPostgresql,
 } from "react-icons/si";
+import { HiDownload } from "react-icons/hi";
+import { images } from "@/assets/index.js";
 
 const About = () => {
   const skills = [
-    { name: "JavaScript", icon: <SiJavascript className="text-xl" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-xl" /> },
-    { name: "React", icon: <FaReact className="text-xl" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-xl" /> },
-    { name: "Python", icon: <FaPython className="text-xl" /> },
-    { name: "Docker", icon: <FaDocker className="text-xl" /> },
-    { name: "Figma", icon: <FaFigma className="text-xl" /> },
-    { name: "Git", icon: <FaGitAlt className="text-xl" /> },
-    { name: "PostgreSQL", icon: <SiPostgresql className="text-xl" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-xl" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-xl" /> },
-    { name: "REST APIs", icon: <FaCode className="text-xl" /> },
+    { name: "JavaScript", icon: <SiJavascript className="text-lg" /> },
+    { name: "TypeScript", icon: <SiTypescript className="text-lg" /> },
+    { name: "React", icon: <FaReact className="text-lg" /> },
+    { name: "Node.js", icon: <FaNodeJs className="text-lg" /> },
+    { name: "Python", icon: <FaPython className="text-lg" /> },
+    { name: "Docker", icon: <FaDocker className="text-lg" /> },
+    { name: "Figma", icon: <FaFigma className="text-lg" /> },
+    { name: "Git", icon: <FaGitAlt className="text-lg" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-lg" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-lg" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-lg" /> },
+    { name: "REST APIs", icon: <FaCode className="text-lg" /> },
   ];
+
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/tu-cv.pdf";
+    link.download = "Mi_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="about" className="relative flex-1 bg-background">
-      <div className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-10 md:py-20">
-        <div className="flex flex-col max-w-6xl w-full flex-1">
+      <div className="px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div className="mx-auto max-w-7xl">
           {/* Header Section */}
-          <div className="flex flex-wrap justify-between gap-4 items-center mb-12 animate-fade-in-up">
-            <div className="flex flex-col gap-3">
-              <h1 className="text-text text-4xl sm:text-5xl font-black leading-tight tracking-tight">
+          <div className="flex flex-wrap justify-between gap-4 px-4 pb-8 animate-fade-in-up">
+            <div className="flex flex-col gap-2">
+              <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
                 Sobre mí
               </h1>
-              <p className="text-text-secondary text-base font-normal leading-normal">
+              <p className="text-base font-normal leading-normal text-text-secondary">
                 Un desarrollador apasionado por crear soluciones eficientes y
                 modernas.
               </p>
@@ -50,25 +61,21 @@ const About = () => {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-4">
             {/* Left Column: Bio and Photo */}
             <div
-              className="flex flex-col gap-8 animate-fade-in-up"
+              className="flex flex-col gap-6 animate-fade-in-up"
               style={{ animationDelay: "0.1s" }}
             >
               {/* Photo and Intro */}
               <div className="flex flex-col sm:flex-row gap-6 items-start">
-                <div
-                  className="bg-center bg-no-repeat aspect-square bg-cover rounded-xl min-h-32 w-32 shrink-0 border-2 border-primary/20 shadow-lg"
-                  role="img"
-                  aria-label="Fotografía profesional"
-                  style={{
-                    backgroundImage:
-                      'url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop")',
-                  }}
+                <img
+                  src={images.profileImage}
+                  alt="Fotografía profesional"
+                  className="aspect-square object-cover rounded-xl min-h-32 w-32 shrink-0 border-2 border-primary/20 shadow-lg"
                 />
-                <div className="flex flex-col gap-4">
-                  <p className="text-text-secondary text-base font-normal leading-relaxed">
+                <div className="flex flex-col gap-3">
+                  <p className="text-sm font-normal leading-normal text-text-secondary">
                     Hola, soy un desarrollador de software con una gran pasión
                     por crear aplicaciones web intuitivas y de alto rendimiento.
                     Con experiencia en el desarrollo full-stack, me especializo
@@ -80,7 +87,7 @@ const About = () => {
               </div>
 
               {/* Additional Bio Text */}
-              <p className="text-text-secondary text-base font-normal leading-relaxed">
+              <p className="text-sm font-normal leading-normal text-text-secondary">
                 Mi filosofía se centra en escribir{" "}
                 <span className="text-primary font-semibold">
                   código limpio, escalable y bien documentado
@@ -91,7 +98,7 @@ const About = () => {
                 las últimas tendencias de la industria.
               </p>
 
-              <p className="text-text-secondary text-base font-normal leading-relaxed">
+              <p className="text-sm font-normal leading-normal text-text-secondary">
                 Fuera del trabajo, me gusta contribuir a proyectos de{" "}
                 <span className="text-accent font-semibold">
                   código abierto
@@ -106,7 +113,7 @@ const About = () => {
               className="flex flex-col animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <h2 className="text-text text-[22px] font-bold leading-tight tracking-tight mb-6">
+              <h2 className="text-xl font-semibold leading-tight tracking-tight text-text mb-6">
                 Habilidades Técnicas
               </h2>
 
@@ -120,7 +127,7 @@ const About = () => {
                     <div className="text-primary group-hover:text-primary-hover transition-colors">
                       {skill.icon}
                     </div>
-                    <h3 className="text-text text-sm font-bold leading-tight group-hover:text-primary transition-colors">
+                    <h3 className="text-sm font-medium leading-tight text-text group-hover:text-primary transition-colors">
                       {skill.name}
                     </h3>
                   </div>
@@ -129,15 +136,15 @@ const About = () => {
 
               {/* Stats Section */}
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                  <div className="text-3xl font-black text-primary">5+</div>
-                  <div className="text-sm text-text-secondary">
+                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
+                  <div className="text-2xl font-black text-primary">5+</div>
+                  <div className="text-xs font-medium text-text-secondary">
                     Años de experiencia
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                  <div className="text-3xl font-black text-primary">20+</div>
-                  <div className="text-sm text-text-secondary">
+                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
+                  <div className="text-2xl font-black text-primary">20+</div>
+                  <div className="text-xs font-medium text-text-secondary">
                     Proyectos completados
                   </div>
                 </div>
@@ -147,28 +154,16 @@ const About = () => {
 
           {/* Optional: Download CV Button */}
           <div
-            className="flex justify-center mt-12 animate-fade-in"
+            className="flex justify-center mt-12 px-4 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            <button
+              onClick={handleDownloadResume}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
+              <HiDownload className="w-5 h-5" />
               Descargar CV
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -53,7 +53,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
           className="fixed left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white shadow-lg text-text-secondary hover:text-primary hover:bg-background-secondary transition-all duration-300 hover:scale-110 hidden lg:block"
           aria-label="Proyecto anterior"
         >
-          <FaChevronLeft className="text-2xl" />
+          <FaChevronLeft className="text-xl" />
         </button>
       )}
 
@@ -63,7 +63,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
           className="fixed right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white shadow-lg text-text-secondary hover:text-primary hover:bg-background-secondary transition-all duration-300 hover:scale-110 hidden lg:block"
           aria-label="Proyecto siguiente"
         >
-          <FaChevronRight className="text-2xl" />
+          <FaChevronRight className="text-xl" />
         </button>
       )}
 
@@ -81,7 +81,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
                 className="p-2 text-text-secondary hover:text-primary hover:bg-white rounded-lg transition-all duration-300"
                 title="Proyecto anterior"
               >
-                <FaChevronLeft />
+                <FaChevronLeft className="text-base" />
               </button>
             )}
             {onNext && (
@@ -90,7 +90,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
                 className="p-2 text-text-secondary hover:text-primary hover:bg-white rounded-lg transition-all duration-300"
                 title="Proyecto siguiente"
               >
-                <FaChevronRight />
+                <FaChevronRight className="text-base" />
               </button>
             )}
           </div>
@@ -99,7 +99,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
             className="p-2 text-text-secondary hover:text-primary hover:bg-white rounded-lg transition-all duration-300"
             title="Cerrar"
           >
-            <FaTimes />
+            <FaTimes className="text-base" />
           </button>
         </div>
 
@@ -164,10 +164,10 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
                   ⭐ Proyecto Destacado
                 </span>
               )}
-              <h2 className="text-text text-4xl font-black leading-tight tracking-tight">
+              <h2 className="text-text text-2xl sm:text-3xl font-black leading-tight tracking-tight">
                 {project.title}
               </h2>
-              <p className="text-text-secondary text-base font-normal leading-relaxed">
+              <p className="text-text-secondary text-sm font-normal leading-normal">
                 {project.fullDescription || project.description}
               </p>
             </div>
@@ -178,7 +178,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
                 className="animate-fade-in-up"
                 style={{ animationDelay: "0.1s" }}
               >
-                <h3 className="text-text text-lg font-bold leading-tight pb-2">
+                <h3 className="text-text text-base font-semibold leading-tight pb-2">
                   Características Principales
                 </h3>
                 <div className="border-t border-primary/10 pt-3 space-y-2">
@@ -196,7 +196,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
                           <path d="M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z" />
                         </svg>
                       </div>
-                      <p className="text-text text-base font-normal leading-normal group-hover:text-primary transition-colors">
+                      <p className="text-text text-sm font-normal leading-normal group-hover:text-primary transition-colors">
                         {feature}
                       </p>
                     </label>
@@ -213,10 +213,10 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
               {/* Role */}
               {project.role && (
                 <div>
-                  <h3 className="text-text text-lg font-bold leading-tight pb-2">
+                  <h3 className="text-text text-base font-semibold leading-tight pb-2">
                     Mi Rol
                   </h3>
-                  <p className="text-text-secondary text-sm font-normal leading-relaxed border-t border-primary/10 pt-3">
+                  <p className="text-text-secondary text-sm font-normal leading-normal border-t border-primary/10 pt-3">
                     {project.role}
                   </p>
                 </div>
@@ -224,7 +224,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
 
               {/* Technology Stack */}
               <div className={project.role ? "" : "sm:col-span-2"}>
-                <h3 className="text-text text-lg font-bold leading-tight pb-2">
+                <h3 className="text-text text-base font-semibold leading-tight pb-2">
                   Stack Tecnológico
                 </h3>
                 <div className="flex flex-wrap gap-2 border-t border-primary/10 pt-3">
@@ -242,25 +242,25 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
 
             {/* Action Buttons */}
             <div
-              className="flex flex-col sm:flex-row gap-4 pt-4 mt-auto animate-fade-in-up"
+              className="flex flex-col sm:flex-row gap-4 pt-4 pb-4 mt-auto animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}
             >
               <a
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 text-center font-bold text-white bg-primary hover:bg-primary-hover px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="flex-1 flex items-center justify-center gap-2 text-center font-semibold text-white text-sm bg-primary hover:bg-primary-hover px-5 py-2.5 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
-                <FaExternalLinkAlt size={16} />
+                <FaExternalLinkAlt className="w-4 h-4" />
                 Ver Demo
               </a>
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 text-center font-bold text-text bg-background-secondary hover:bg-text hover:text-white border-2 border-text/20 hover:border-text px-6 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                className="flex-1 flex items-center justify-center gap-2 text-center font-semibold text-text text-sm bg-background-secondary hover:bg-text hover:text-white border-2 border-text/20 hover:border-text px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
               >
-                <FaGithub size={18} />
+                <FaGithub className="w-4 h-4" />
                 Ver Código
               </a>
             </div>

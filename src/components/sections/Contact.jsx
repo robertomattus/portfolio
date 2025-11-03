@@ -90,21 +90,21 @@ const Contact = () => {
 
   const contactMethods = [
     {
-      icon: <FaPhone className="text-xl" />,
+      icon: <FaPhone className="text-lg" />,
       label: "LLAMAR AHORA",
       href: "tel:+123456789",
       color:
         "border-primary/20 hover:bg-background-secondary hover:border-primary/40",
     },
     {
-      icon: <FaWhatsapp className="text-xl" />,
+      icon: <FaWhatsapp className="text-lg" />,
       label: "WHATSAPP",
       href: "https://wa.me/123456789",
       color: "bg-[#25D366] hover:bg-[#20BA5A] text-white border-0",
       external: true,
     },
     {
-      icon: <FaEnvelope className="text-xl" />,
+      icon: <FaEnvelope className="text-lg" />,
       label: "EMAIL DIRECTO",
       href: "mailto:email@ejemplo.com",
       color:
@@ -114,17 +114,17 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      icon: <FaGithub className="text-2xl" />,
+      icon: <FaGithub className="text-xl" />,
       href: "https://github.com/robertomattus",
       label: "GitHub",
     },
     {
-      icon: <FaLinkedin className="text-2xl" />,
+      icon: <FaLinkedin className="text-xl" />,
       href: "https://linkedin.com/in/tu-perfil",
       label: "LinkedIn",
     },
     {
-      icon: <FaTwitter className="text-2xl" />,
+      icon: <FaTwitter className="text-xl" />,
       href: "https://twitter.com/tu-usuario",
       label: "Twitter",
     },
@@ -133,28 +133,34 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 md:p-8 bg-background"
+      className="relative flex-1 px-4 sm:px-6 lg:px-8 py-10 md:py-16 bg-background"
     >
-      <div className="w-full max-w-6xl">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Columna Izquierda: Título y Formulario */}
-          <div className="flex flex-col space-y-8">
-            {/* Page Heading */}
-            <div className="flex flex-col gap-3">
-              <h1 className="text-4xl font-black leading-tight tracking-tight text-text md:text-5xl">
-                Trabajemos juntos
-              </h1>
-              <p className="text-base font-normal leading-normal text-text-secondary">
-                Estoy disponible para proyectos remotos. ¡Hablemos!
-              </p>
-            </div>
+      <div className="mx-auto max-w-7xl">
+        {/* Page Heading */}
+        <div className="flex flex-wrap justify-between gap-4 px-4 pb-8 animate-fade-in-up">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
+              Trabajemos juntos
+            </h1>
+            <p className="text-base font-normal leading-normal text-text-secondary">
+              Estoy disponible para proyectos remotos. ¡Hablemos!
+            </p>
+          </div>
+        </div>
 
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 p-4">
+          {/* Columna Izquierda: Formulario */}
+          <div
+            className="flex flex-col animate-fade-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
             {/* Formulario */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 {/* Nombre completo */}
                 <label className="flex flex-col col-span-2 sm:col-span-1">
-                  <p className="pb-2 text-base font-medium leading-normal text-text">
+                  <p className="pb-2 text-sm font-medium leading-normal text-text">
                     Nombre completo
                   </p>
                   <input
@@ -162,19 +168,19 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`h-14 w-full rounded-lg border ${
+                    className={`h-12 w-full rounded-lg border ${
                       errors.name ? "border-red-500" : "border-primary/20"
-                    } bg-white p-4 text-base font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
+                    } bg-white p-3 text-sm font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
                     placeholder="Ingresa tu nombre completo"
                   />
                   {errors.name && (
-                    <p className="pt-1 text-sm text-red-500">{errors.name}</p>
+                    <p className="pt-1 text-xs text-red-500">{errors.name}</p>
                   )}
                 </label>
 
                 {/* Email */}
                 <label className="flex flex-col col-span-2 sm:col-span-1">
-                  <p className="pb-2 text-base font-medium leading-normal text-text">
+                  <p className="pb-2 text-sm font-medium leading-normal text-text">
                     Email
                   </p>
                   <input
@@ -182,20 +188,20 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`h-14 w-full rounded-lg border ${
+                    className={`h-12 w-full rounded-lg border ${
                       errors.email ? "border-red-500" : "border-primary/20"
-                    } bg-white p-4 text-base font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
+                    } bg-white p-3 text-sm font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
                     placeholder="tu.email@ejemplo.com"
                   />
                   {errors.email && (
-                    <p className="pt-1 text-sm text-red-500">{errors.email}</p>
+                    <p className="pt-1 text-xs text-red-500">{errors.email}</p>
                   )}
                 </label>
               </div>
 
               {/* Asunto */}
               <label className="flex flex-col">
-                <p className="pb-2 text-base font-medium leading-normal text-text">
+                <p className="pb-2 text-sm font-medium leading-normal text-text">
                   Asunto
                 </p>
                 <input
@@ -203,19 +209,19 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`h-14 w-full rounded-lg border ${
+                  className={`h-12 w-full rounded-lg border ${
                     errors.subject ? "border-red-500" : "border-primary/20"
-                  } bg-white p-4 text-base font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
+                  } bg-white p-3 text-sm font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
                   placeholder="¿Sobre qué te gustaría hablar?"
                 />
                 {errors.subject && (
-                  <p className="pt-1 text-sm text-red-500">{errors.subject}</p>
+                  <p className="pt-1 text-xs text-red-500">{errors.subject}</p>
                 )}
               </label>
 
               {/* Mensaje */}
               <label className="flex flex-col">
-                <p className="pb-2 text-base font-medium leading-normal text-text">
+                <p className="pb-2 text-sm font-medium leading-normal text-text">
                   Mensaje
                 </p>
                 <textarea
@@ -223,21 +229,21 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className={`min-h-36 w-full resize-y rounded-lg border ${
+                  className={`min-h-32 w-full resize-y rounded-lg border ${
                     errors.message ? "border-red-500" : "border-primary/20"
-                  } bg-white p-4 text-base font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
+                  } bg-white p-3 text-sm font-normal text-text placeholder:text-text-secondary/50 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all`}
                   placeholder="Escribe tu mensaje aquí..."
                 />
                 {errors.message && (
-                  <p className="pt-1 text-sm text-red-500">{errors.message}</p>
+                  <p className="pt-1 text-xs text-red-500">{errors.message}</p>
                 )}
               </label>
 
               {/* Mensaje de éxito */}
               {submitSuccess && (
-                <div className="flex items-center gap-2 p-4 bg-green-100 border border-green-300 text-green-800 rounded-lg">
+                <div className="flex items-center gap-2 p-3 bg-green-100 border border-green-300 text-green-800 rounded-lg">
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -247,7 +253,7 @@ const Contact = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <p className="text-sm font-medium">
+                  <p className="text-xs font-medium">
                     ¡Mensaje enviado con éxito! Te responderé pronto.
                   </p>
                 </div>
@@ -257,12 +263,12 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-bold text-white transition-all hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:transform-none"
+                className="cursor-pointer flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-white transition-all hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:transform-none"
               >
                 {isSubmitting ? (
                   <>
                     <svg
-                      className="animate-spin h-5 w-5"
+                      className="animate-spin h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -286,7 +292,7 @@ const Contact = () => {
                 ) : (
                   <>
                     Enviar mensaje
-                    <FaPaperPlane className="text-sm" />
+                    <FaPaperPlane className="text-xs" />
                   </>
                 )}
               </button>
@@ -294,10 +300,13 @@ const Contact = () => {
           </div>
 
           {/* Columna Derecha: Contacto Directo e Info */}
-          <div className="flex flex-col space-y-8 lg:pt-28">
+          <div
+            className="flex flex-col space-y-6 animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             {/* Contacto Directo */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-text">
+              <h3 className="text-lg font-semibold leading-tight text-text">
                 O contáctame directamente
               </h3>
               <div className="flex flex-col space-y-3">
@@ -307,7 +316,7 @@ const Contact = () => {
                     href={method.href}
                     target={method.external ? "_blank" : undefined}
                     rel={method.external ? "noopener noreferrer" : undefined}
-                    className={`flex h-14 items-center justify-center gap-3 rounded-lg border px-5 text-base font-semibold transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg ${
+                    className={`flex h-12 items-center justify-center gap-2 rounded-lg border px-4 text-sm font-semibold transition-all transform hover:-translate-y-1 shadow-sm hover:shadow-md ${
                       method.color ||
                       "border-primary/20 hover:bg-background-secondary"
                     } ${
@@ -324,14 +333,14 @@ const Contact = () => {
             {/* Información Adicional */}
             <div className="space-y-4 pt-4 border-t border-primary/10">
               <div className="flex items-center gap-3 text-text-secondary">
-                <FaMapMarkerAlt className="text-2xl text-primary" />
-                <span className="text-base font-medium">
+                <FaMapMarkerAlt className="text-xl text-primary flex-shrink-0" />
+                <span className="text-sm font-medium">
                   Playa del Carmen, México
                 </span>
               </div>
               <div className="flex items-center gap-3 text-text-secondary">
-                <FaCalendarCheck className="text-2xl text-primary" />
-                <span className="text-base font-medium">
+                <FaCalendarCheck className="text-xl text-primary flex-shrink-0" />
+                <span className="text-sm font-medium">
                   Disponible para proyectos remotos
                 </span>
               </div>

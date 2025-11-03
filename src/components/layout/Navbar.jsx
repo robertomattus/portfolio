@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { HiMenu, HiX, HiDownload } from "react-icons/hi";
+import CV from "@/assets/CV.pdf";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,8 +38,8 @@ const Navbar = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/tu-cv.pdf";
-    link.download = "Mi_CV.pdf";
+    link.href = CV;
+    link.download = "Curriculum Roberto Mattus.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

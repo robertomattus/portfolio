@@ -111,7 +111,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="https://linkedin.com/in/robertomattus"
+              href="https://www.linkedin.com/in/roberto-mattus-b7b615231"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-2.5 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
@@ -122,7 +122,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="mailto:roberto@example.com"
+              href="mailto:robertmatt113@gmail.com"
               className="group relative p-2.5 text-text-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
               aria-label="Email"
             >

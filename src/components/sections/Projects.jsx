@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import ProjectModal from "./ProjectModal";
+import { images } from "@/assets/index.js";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -11,34 +12,44 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Proyecto E-commerce",
+      title: "Pilates Web App",
       description:
-        "Plataforma de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración.",
+        "Aplicación web para gestión de clases de pilates con reservas y panel de administración.",
       fullDescription:
-        "Plataforma completa de comercio electrónico desarrollada con tecnologías modernas. Incluye sistema de autenticación, gestión de productos, carrito de compras, procesamiento de pagos con Stripe, y un panel de administración completo para gestionar inventario y pedidos.",
+        "Aplicación web completa para estudios de pilates que permite a los usuarios iniciar sesión con google, ver y reservar clases, visualizar posts y gestionar sus reservas. El panel de administración permite a los administradores iniciar sesion con google (valida rol de administrador para accesar), gestionar clases, posts y usuarios.",
       image: "/projects/ecommerce.jpg",
       images: [
-        "/projects/ecommerce.jpg",
-        "/projects/ecommerce-2.jpg",
-        "/projects/ecommerce-3.jpg",
+        images.pilates1,
+        images.pilates2,
+        images.pilates3,
+        images.pilates4,
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com/usuario/proyecto",
-      demo: "https://proyecto-demo.com",
+      technologies: [
+        "React",
+        "Javascript",
+        "Node.js",
+        "MongoDB",
+        "Clerk",
+        "Cloudinary",
+      ],
+      github: "https://github.com/robertomattus/pilates-app",
+      demo: "https://flexstrongpilates.vercel.app/",
       featured: true,
       keyFeatures: [
-        "Sistema de autenticación y autorización",
-        "Carrito de compras con persistencia",
-        "Integración con pasarela de pagos Stripe",
-        "Panel de administración completo",
-        "Gestión de inventario en tiempo real",
-        "Sistema de búsqueda y filtros avanzados",
+        "Autenticación y autorización con Google",
+        "Gestión de usuarios y control de roles (admin/usuario)",
+        "Reserva de clases con control de disponibilidad",
+        "Visualización de clases y posts informativos",
+        "Panel de administración completo para gestionar clases, posts y usuarios",
+        "Validación de acceso para administradores mediante rol verificado",
+        "Diseño responsivo y experiencia optimizada para dispositivos móviles",
+        "Base de datos en tiempo real para actualizaciones instantáneas de reservas",
       ],
       role: "Full Stack Developer",
     },
     {
-      id: 2,
-      title: "App de Tareas",
+      id: 22,
+      title: "Food Delivery Web App",
       description:
         "Aplicación de gestión de tareas con autenticación, categorías y recordatorios.",
       fullDescription:
@@ -60,7 +71,34 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Dashboard Analytics",
+      title: "Dashboard Skeleton",
+      description:
+        "Panel de control con gráficos interactivos y análisis de datos en tiempo real.",
+      fullDescription:
+        "Dashboard analítico completo para visualización de datos empresariales con gráficos interactivos, reportes personalizables y actualizaciones en tiempo real.",
+      image: "/projects/dashboard.jpg",
+      images: [
+        "/projects/dashboard.jpg",
+        "/projects/dashboard-2.jpg",
+        "/projects/dashboard-3.jpg",
+      ],
+      technologies: ["Next.js", "TypeScript", "Chart.js"],
+      github: "https://github.com/usuario/proyecto",
+      demo: "https://proyecto-demo.com",
+      featured: true,
+      keyFeatures: [
+        "Visualización de datos en tiempo real",
+        "Múltiples tipos de gráficos interactivos",
+        "Exportación de reportes en PDF",
+        "Filtros y segmentación avanzada",
+        "Dashboard personalizable",
+        "Integración con múltiples fuentes de datos",
+      ],
+      role: "Full Stack Developer & Data Visualization Specialist",
+    },
+    {
+      id: 4,
+      title: "Netflix Clone",
       description:
         "Panel de control con gráficos interactivos y análisis de datos en tiempo real.",
       fullDescription:

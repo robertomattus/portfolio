@@ -17,6 +17,7 @@ import {
 } from "react-icons/si";
 import { HiDownload } from "react-icons/hi";
 import { images } from "@/assets/index.js";
+import CV from "@/assets/CV.pdf";
 
 const About = () => {
   const skills = [
@@ -36,8 +37,8 @@ const About = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/tu-cv.pdf";
-    link.download = "Mi_CV.pdf";
+    link.href = CV;
+    link.download = "Curriculum Roberto Mattus.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

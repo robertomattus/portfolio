@@ -17,7 +17,7 @@ const Projects = () => {
         "Aplicación web para gestión de clases de pilates con reservas y panel de administración.",
       fullDescription:
         "Aplicación web completa para estudios de pilates que permite a los usuarios iniciar sesión con google, ver y reservar clases, visualizar posts y gestionar sus reservas. El panel de administración permite a los administradores iniciar sesion con google (valida rol de administrador para accesar), gestionar clases, posts y usuarios.",
-      image: "/projects/ecommerce.jpg",
+      image: images.pilates,
       images: [
         images.pilates1,
         images.pilates2,

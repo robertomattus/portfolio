@@ -1,5 +1,4 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -135,7 +134,7 @@ const Footer = () => {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </a>
             <a
-              href="https://linkedin.com/in/robertomattus"
+              href="https://www.linkedin.com/in/roberto-mattus-b7b615231"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 transform hover:scale-110 border border-white/10 hover:border-[var(--color-primary)]"
@@ -151,11 +150,11 @@ const Footer = () => {
               className="group relative w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 transform hover:scale-110 border border-white/10 hover:border-[var(--color-primary)]"
               aria-label="Twitter"
             >
-              <FaTwitter className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
+              <FaInstagram className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </a>
             <a
-              href="mailto:roberto@example.com"
+              href="mailto:robertmatt113@gmail.com"
               className="group relative w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 transform hover:scale-110 border border-white/10 hover:border-[var(--color-primary)]"
               aria-label="Email"
             >

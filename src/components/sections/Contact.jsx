@@ -92,41 +92,23 @@ const Contact = () => {
     {
       icon: <FaPhone className="text-lg" />,
       label: "LLAMAR AHORA",
-      href: "tel:+123456789",
+      href: "tel:+529842051122",
       color:
         "border-primary/20 hover:bg-background-secondary hover:border-primary/40",
     },
     {
       icon: <FaWhatsapp className="text-lg" />,
       label: "WHATSAPP",
-      href: "https://wa.me/123456789",
+      href: "https://wa.me/9842051122",
       color: "bg-[#25D366] hover:bg-[#20BA5A] text-white border-0",
       external: true,
     },
     {
       icon: <FaEnvelope className="text-lg" />,
       label: "EMAIL DIRECTO",
-      href: "mailto:email@ejemplo.com",
+      href: "mailto:robertmatt113@gmail.com",
       color:
         "border-primary/20 hover:bg-background-secondary hover:border-primary/40",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: <FaGithub className="text-xl" />,
-      href: "https://github.com/robertomattus",
-      label: "GitHub",
-    },
-    {
-      icon: <FaLinkedin className="text-xl" />,
-      href: "https://linkedin.com/in/tu-perfil",
-      label: "LinkedIn",
-    },
-    {
-      icon: <FaTwitter className="text-xl" />,
-      href: "https://twitter.com/tu-usuario",
-      label: "Twitter",
     },
   ];
 

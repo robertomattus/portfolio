@@ -138,7 +138,7 @@ const About = () => {
               {/* Stats Section */}
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
-                  <div className="text-2xl font-black text-primary">5+</div>
+                  <div className="text-2xl font-black text-primary">2+</div>
                   <div className="text-xs font-medium text-text-secondary">
                     Años de experiencia
                   </div>

@@ -9,6 +9,9 @@ import foodDel1 from "@/assets/food-del1.png";
 import foodDel2 from "@/assets/food-del2.png";
 import foodDel3 from "@/assets/food-del3.png";
 import foodDel4 from "@/assets/food-del4.png";
+import dashboard from "@/assets/dashboard.jpg";
+import dashboard1 from "@/assets/dashboard1.png";
+import dashboard2 from "@/assets/dashboard2.png";
 
 export const images = {
   profileImage,
@@ -22,4 +25,7 @@ export const images = {
   foodDel2,
   foodDel3,
   foodDel4,
+  dashboard,
+  dashboard1,
+  dashboard2,
 };

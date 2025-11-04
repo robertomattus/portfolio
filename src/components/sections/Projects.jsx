@@ -16,7 +16,7 @@ const Projects = () => {
       description:
         "Aplicación web para gestión de clases de pilates con reservas y panel de administración.",
       fullDescription:
-        "Aplicación web completa para estudios de pilates que permite a los usuarios iniciar sesión con google, ver y reservar clases, visualizar posts y gestionar sus reservas. El panel de administración permite a los administradores iniciar sesion con google (valida rol de administrador para accesar), gestionar clases, posts y usuarios.",
+        "Aplicación web para estudios de pilates que permite a los usuarios iniciar sesión con google, ver y reservar clases, visualizar posts y gestionar sus reservas. El panel de administración permite a los administradores iniciar sesion con google (valida rol de administrador para accesar), gestionar clases, posts y usuarios.",
       image: images.pilates,
       images: [
         images.pilates1,
@@ -48,26 +48,42 @@ const Projects = () => {
       role: "Full Stack Developer",
     },
     {
-      id: 22,
+      id: 2,
       title: "Food Delivery Web App",
       description:
-        "Aplicación de gestión de tareas con autenticación, categorías y recordatorios.",
+        "Aplicación web de delivery de comida con carrito de compras, sistema de pedidos y panel de administración.",
       fullDescription:
-        "Aplicación web para gestión de tareas personales y profesionales con sistema de categorías, etiquetas, recordatorios y colaboración en tiempo real.",
-      image: "/projects/tasks.jpg",
-      images: ["/projects/tasks.jpg", "/projects/tasks-2.jpg"],
-      technologies: ["React", "Firebase", "Tailwind"],
-      github: "https://github.com/usuario/proyecto",
-      demo: "https://proyecto-demo.com",
+        "Aplicación web de delivery de comida que permite a los usuarios registrarse e iniciar sesión, explorar el menú de productos, agregar artículos al carrito y realizar pedidos. Los clientes pueden ingresar su dirección de entrega y elegir entre pago en efectivo o tarjeta. El panel de administración permite gestionar el catálogo de productos y supervisar todas las órdenes en tiempo real.",
+      image: images.foodDelivery,
+      images: [
+        images.foodDel1,
+        images.foodDel2,
+        images.foodDel3,
+        images.foodDel4,
+      ],
+      technologies: [
+        "React",
+        "Javascript",
+        "Node.js",
+        "MongoDB",
+        "Cloudinary",
+        "Stripe Payments",
+      ],
+      github: "https://github.com/robertomattus/food-delivery-frontend",
+      demo: "https://food-delivery-frontend-jet.vercel.app",
       featured: false,
       keyFeatures: [
-        "Gestión de tareas con drag & drop",
-        "Sistema de categorías y etiquetas",
-        "Recordatorios por email",
-        "Colaboración en tiempo real",
-        "Vista de calendario integrada",
+        "Sistema de autenticación con correo electrónico y contraseña",
+        "Catálogo de productos con menú interactivo",
+        "Carrito de compras con gestión de cantidades y totales",
+        "Sistema de checkout con captura de dirección de entrega",
+        "Múltiples métodos de pago (efectivo y tarjeta)",
+        "Gestión completa de pedidos y seguimiento de estado",
+        "Panel de administración para gestionar productos y órdenes",
+        "Diseño responsivo optimizado para ordenar desde cualquier dispositivo",
+        "Actualización en tiempo real del estado de las órdenes",
       ],
-      role: "Frontend Developer",
+      role: "Full Stack Developer",
     },
     {
       id: 3,
@@ -110,8 +126,8 @@ const Projects = () => {
         "/projects/dashboard-3.jpg",
       ],
       technologies: ["Next.js", "TypeScript", "Chart.js"],
-      github: "https://github.com/usuario/proyecto",
-      demo: "https://proyecto-demo.com",
+      github: "https://github.com/robertomattus/netflix-clone",
+      demo: "https://netflix-clone-beta-sooty.vercel.app",
       featured: true,
       keyFeatures: [
         "Visualización de datos en tiempo real",
@@ -121,7 +137,7 @@ const Projects = () => {
         "Dashboard personalizable",
         "Integración con múltiples fuentes de datos",
       ],
-      role: "Frontend Developer & Data Visualization Specialist",
+      role: "Frontend Developer",
     },
   ];
 

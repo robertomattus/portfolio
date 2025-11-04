@@ -12,6 +12,9 @@ import foodDel4 from "@/assets/food-del4.png";
 import dashboard from "@/assets/dashboard.jpg";
 import dashboard1 from "@/assets/dashboard1.png";
 import dashboard2 from "@/assets/dashboard2.png";
+import netflix from "@/assets/netflix.jpg";
+import netflix1 from "@/assets/netflix1.png";
+import netflix2 from "@/assets/netflix2.png";
 
 export const images = {
   profileImage,
@@ -28,4 +31,7 @@ export const images = {
   dashboard,
   dashboard1,
   dashboard2,
+  netflix,
+  netflix1,
+  netflix2,
 };

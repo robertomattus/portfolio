@@ -144,7 +144,7 @@ const Footer = () => {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </a>
             <a
-              href="https://twitter.com/robertomattus"
+              href="https://www.instagram.com/robert.mattus?igsh=MXdpYmJrazRsNHlzNg%3D%3D&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 backdrop-blur-sm flex items-center justify-center transition-all duration-300 transform hover:scale-110 border border-white/10 hover:border-[var(--color-primary)]"

@@ -118,7 +118,7 @@ const Projects = () => {
       technologies: ["React", "Javascript", "Tailwind CSS"],
       github: "https://github.com/robertomattus/netflix-clone",
       demo: "https://netflix-clone-beta-sooty.vercel.app",
-      featured: true,
+      featured: false,
       keyFeatures: [
         "Interfaz de usuario moderna inspirada en Netflix",
         "Sistema de autenticación con formularios de login y registro",

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   FaPhone,
   FaWhatsapp,
@@ -6,9 +7,6 @@ import {
   FaMapMarkerAlt,
   FaCalendarCheck,
   FaPaperPlane,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
 } from "react-icons/fa";
 
 const Contact = () => {
@@ -22,6 +20,7 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,9 +68,23 @@ const Contact = () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setSubmitError(false);
 
-    // Simulación de envío (aquí irá tu lógica real)
-    setTimeout(() => {
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "robertmatt113@gmail.com",
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
       setIsSubmitting(false);
       setSubmitSuccess(true);
       setFormData({
@@ -85,7 +98,15 @@ const Contact = () => {
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Error al enviar el mensaje:", error);
+      setIsSubmitting(false);
+      setSubmitError(true);
+
+      setTimeout(() => {
+        setSubmitError(false);
+      }, 5000);
+    }
   };
 
   const contactMethods = [
@@ -237,6 +258,26 @@ const Contact = () => {
                   </svg>
                   <p className="text-xs font-medium">
                     ¡Mensaje enviado con éxito! Te responderé pronto.
+                  </p>
+                </div>
+              )}
+
+              {/* Mensaje de error */}
+              {submitError && (
+                <div className="flex items-center gap-2 p-3 bg-red-100 border border-red-300 text-red-800 rounded-lg">
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <p className="text-xs font-medium">
+                    Error al enviar el mensaje. Por favor, intenta nuevamente.
                   </p>
                 </div>
               )}

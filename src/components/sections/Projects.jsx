@@ -229,7 +229,7 @@ const Projects = () => {
             href="https://github.com/robertomattus"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-background-secondary text-text font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border-2 border-primary/10 hover:border-primary/30 transform hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-[#181717] text-text hover:text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border-2 border-primary/10 hover:border-primary/30 transform hover:-translate-y-1"
           >
             <FaGithub size={20} />
             Ver más proyectos en GitHub

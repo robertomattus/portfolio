@@ -258,7 +258,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 text-center font-semibold text-text text-sm bg-background-secondary hover:bg-text hover:text-white border-2 border-text/20 hover:border-text px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+                className="flex-1 flex items-center justify-center gap-2 text-center font-semibold text-text text-sm bg-background-secondary hover:bg-[#181717] hover:text-white border-2 border-primary/10 hover:border-primary/30 px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
               >
                 <FaGithub className="w-4 h-4" />
                 Ver Código

@@ -1,4 +1,4 @@
-import profileImage from "@/assets/profile-image.jpg";
+import profileImage from "@/assets/profile-image.png";
 import pilates from "@/assets/pilates.jpg";
 import pilates1 from "@/assets/pilates1.png";
 import pilates2 from "@/assets/pilates2.png";

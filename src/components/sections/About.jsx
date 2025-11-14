@@ -54,7 +54,7 @@ const About = () => {
               <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
                 Sobre mí
               </h1>
-              <p className="text-base font-normal leading-normal text-text-secondary">
+              <p className="text-base font-normal leading-normal text-justify text-text-secondary">
                 Un desarrollador apasionado por crear soluciones eficientes y
                 modernas.
               </p>
@@ -73,22 +73,22 @@ const About = () => {
                 <img
                   src={images.profileImage}
                   alt="Fotografía profesional"
-                  className="aspect-square object-cover rounded-xl min-h-32 w-32 shrink-0 border-2 border-primary/20 shadow-lg"
+                  className="aspect-square object-cover rounded-xl min-h-32 w-32 shrink-0 border-2 border-primary/20 shadow-lg self-center sm:self-start"
                 />
                 <div className="flex flex-col gap-3">
-                  <p className="text-sm font-normal leading-normal text-text-secondary">
+                  <p className="text-sm font-normal leading-normal text-justify text-text-secondary">
                     Hola, soy un desarrollador de software con una gran pasión
-                    por crear aplicaciones web intuitivas y de alto rendimiento.
-                    Con experiencia en el desarrollo full-stack, me especializo
-                    en la construcción de interfaces de usuario dinámicas con
-                    React y en la creación de APIs robustas con Node.js y
-                    Python.
+                    por crear aplicaciones web y moviles intuitivas y de alto
+                    rendimiento. Con experiencia en el desarrollo full-stack, me
+                    especializo en la construcción de interfaces de usuario
+                    dinámicas con React y en la creación de APIs robustas con
+                    Node.js y Python.
                   </p>
                 </div>
               </div>
 
               {/* Additional Bio Text */}
-              <p className="text-sm font-normal leading-normal text-text-secondary">
+              <p className="text-sm font-normal leading-normal text-justify text-text-secondary">
                 Mi filosofía se centra en escribir{" "}
                 <span className="text-primary font-semibold">
                   código limpio, escalable y bien documentado
@@ -99,13 +99,14 @@ const About = () => {
                 las últimas tendencias de la industria.
               </p>
 
-              <p className="text-sm font-normal leading-normal text-text-secondary">
+              <p className="text-sm font-normal leading-normal text-justify text-text-secondary">
                 Fuera del trabajo, me gusta contribuir a proyectos de{" "}
                 <span className="text-accent font-semibold">
                   código abierto
                 </span>{" "}
-                y explorar nuevos senderos para hacer senderismo, lo cual me
-                ayuda a despejar la mente y encontrar inspiración.
+                y practicar karate, una disciplina que me ayuda a mantenerme
+                centrado, determinado y en paz, además de ser una fuente
+                constante de inspiración.
               </p>
             </div>
 
@@ -137,13 +138,13 @@ const About = () => {
 
               {/* Stats Section */}
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
+                <div className="flex flex-col gap-2 p-4 items-center text-center bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
                   <div className="text-2xl font-black text-primary">2+</div>
                   <div className="text-xs font-medium text-text-secondary">
                     Años de experiencia
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 p-4 bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
+                <div className="flex flex-col gap-2 p-4 items-center text-center bg-white rounded-lg border border-primary/10 hover:border-primary/30 transition-all duration-300 shadow-sm">
                   <div className="text-2xl font-black text-primary">20+</div>
                   <div className="text-xs font-medium text-text-secondary">
                     Proyectos completados

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import {
   FaPhone,
   FaWhatsapp,
@@ -69,35 +68,49 @@ const Contact = () => {
 
     setIsSubmitting(true);
     setSubmitError(false);
+    setSubmitSuccess(false);
 
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      // Crear FormData para Web3Forms
+      const formDataToSend = new FormData();
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_email: "robertmatt113@gmail.com",
-      };
+      // Access Key de Web3Forms
+      formDataToSend.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      // Campos del formulario
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("subject", formData.subject);
+      formDataToSend.append("message", formData.message);
 
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+      // Opcional: Personalizar el asunto del email que recibirás
+      formDataToSend.append("from_name", formData.name);
+
+      // Enviar a Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
       });
 
-      // Ocultar mensaje de éxito después de 5 segundos
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+
+        // Ocultar mensaje de éxito después de 5 segundos
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      } else {
+        throw new Error(result.message || "Error al enviar el mensaje");
+      }
     } catch (error) {
       console.error("Error al enviar el mensaje:", error);
       setIsSubmitting(false);
@@ -357,9 +370,7 @@ const Contact = () => {
             <div className="space-y-4 pt-4 border-t border-primary/10">
               <div className="flex items-center gap-3 text-text-secondary">
                 <FaMapMarkerAlt className="text-xl text-primary flex-shrink-0" />
-                <span className="text-sm font-medium">
-                  Playa del Carmen, México
-                </span>
+                <span className="text-sm font-medium">México</span>
               </div>
               <div className="flex items-center gap-3 text-text-secondary">
                 <FaCalendarCheck className="text-xl text-primary flex-shrink-0" />

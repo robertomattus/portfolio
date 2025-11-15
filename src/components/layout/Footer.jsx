@@ -41,17 +41,19 @@ const Footer = () => {
               Enlaces
             </h4>
             <ul className="space-y-2">
-              {["Inicio", "Sobre mí", "Proyectos", "Contacto"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(" ", "")}`}
-                    className="group text-gray-300 hover:text-[var(--color-primary)] transition-colors duration-300 text-sm flex items-center gap-2"
-                  >
-                    <span className="w-0 h-px bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] group-hover:w-4 transition-all duration-300"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {["Inicio", "Servicios", "Proyectos", "Sobre mí", "Contacto"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase().replace(" ", "")}`}
+                      className="group text-gray-300 hover:text-[var(--color-primary)] transition-colors duration-300 text-sm flex items-center gap-2"
+                    >
+                      <span className="w-0 h-px bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] group-hover:w-4 transition-all duration-300"></span>
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -115,7 +117,7 @@ const Footer = () => {
         {/* Footer bottom - Copyright y redes sociales */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-xs font-medium">
-            © {currentYear} Roberto Mattus. Todos los derechos reservados.
+            © {currentYear} Roberto Mattus.
           </p>
 
           {/* Redes sociales con efectos modernos */}

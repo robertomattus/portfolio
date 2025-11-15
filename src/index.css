@@ -3,16 +3,27 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta de colores personalizada */
-  --color-background: #f8fafc;
+  /*? Paleta de colores personalizada */
+
+  /*? Morado Azulado Moderno */
+  /* --color-background: #f8fafc;
   --color-background-secondary: #f1f5f9;
   --color-primary: #6366f1;
   --color-primary-hover: #4f46e5;
   --color-accent: #8b5cf6;
   --color-text: #1e293b;
-  --color-text-secondary: #475569;
+  --color-text-secondary: #475569; */
 
-  /* Fuente */
+  /*? Verde Natural Serio */
+  --color-background: #fafbf8;
+  --color-background-secondary: #f3f5f0;
+  --color-primary: #495930;
+  --color-primary-hover: #3a4626;
+  --color-accent: #7a9b4e;
+  --color-text: #2a3021;
+  --color-text-secondary: #4a5940;
+
+  /*? Fuente */
   --font-sans: "Inter", system-ui, sans-serif;
 }
 

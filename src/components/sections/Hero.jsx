@@ -135,7 +135,7 @@ const Hero = () => {
 
           {/* Scroll indicator */}
           <a
-            href="#about"
+            href="#services"
             className="inline-flex flex-col items-center gap-1 text-text-secondary hover:text-primary transition-colors duration-300 animate-fade-in cursor-pointer group"
           >
             <span className="text-xs font-medium">Explorar</span>

@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Título principal */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-up">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-text via-primary to-accent">
-              Ingeniero en desarrollo de software
+              ING. DESARROLLO DE SOFTWARE
             </span>
           </h1>
 

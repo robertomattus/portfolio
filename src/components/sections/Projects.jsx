@@ -167,7 +167,7 @@ const Projects = () => {
         <div className="flex flex-wrap justify-between gap-4 px-4 pb-8 animate-fade-in-up">
           <div className="flex flex-col gap-2">
             <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
-              Mis Proyectos
+              Proyectos Recientes
             </h1>
             <p className="text-base font-normal leading-normal text-text-secondary">
               Una selección de proyectos que muestran mis habilidades en

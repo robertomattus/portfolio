@@ -41,19 +41,23 @@ const Footer = () => {
               Enlaces
             </h4>
             <ul className="space-y-2">
-              {["Inicio", "Servicios", "Proyectos", "Sobre mí", "Contacto"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase().replace(" ", "")}`}
-                      className="group text-gray-300 hover:text-[var(--color-primary)] transition-colors duration-300 text-sm flex items-center gap-2"
-                    >
-                      <span className="w-0 h-px bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] group-hover:w-4 transition-all duration-300"></span>
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { label: "Inicio", id: "home" },
+                { label: "Servicios", id: "services" },
+                { label: "Proyectos", id: "projects" },
+                { label: "Sobre mí", id: "about" },
+                { label: "Contacto", id: "contact" },
+              ].map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className="group text-gray-300 hover:text-[var(--color-primary)] transition-colors duration-300 text-sm flex items-center gap-2"
+                  >
+                    <span className="w-0 h-px bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] group-hover:w-4 transition-all duration-300"></span>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

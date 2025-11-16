@@ -17,6 +17,8 @@ const Services = () => {
       title: "Landing Page",
       description:
         "Creación de páginas web diseñadas específicamente para convertir visitantes en clientes potenciales.",
+      solves:
+        "¿Tienes tráfico pero pocas conversiones? Una landing optimizada puede aumentar tus ventas hasta un 300%.",
     },
     {
       id: 2,
@@ -24,6 +26,8 @@ const Services = () => {
       title: "Aplicaciones Web",
       description:
         "Desarrollo de soluciones web a medida que se adaptan y crecen junto con tu negocio.",
+      solves:
+        "¿Procesos manuales que consumen tiempo? Automatiza tu negocio y reduce costos operativos.",
     },
     {
       id: 3,
@@ -31,6 +35,8 @@ const Services = () => {
       title: "Aplicaciones Móviles",
       description:
         "Creación de aplicaciones fáciles de usar y atractivas para teléfonos iPhone y Android.",
+      solves:
+        "¿Tus clientes necesitan acceso desde cualquier lugar? Lleva tu servicio al bolsillo de tus usuarios.",
     },
     {
       id: 4,
@@ -38,6 +44,8 @@ const Services = () => {
       title: "Marketing",
       description:
         "Estrategias digitales y de marca para aumentar tu visibilidad y atraer más clientes en internet.",
+      solves:
+        "¿Inviertes en publicidad sin resultados claros? Optimiza tu presupuesto con estrategias basadas en datos.",
     },
     {
       id: 5,
@@ -45,6 +53,8 @@ const Services = () => {
       title: "UI/UX Design",
       description:
         "Diseño de interfaces visuales y experiencias que hacen que tus productos digitales sean fáciles y agradables de usar.",
+      solves:
+        "¿Los usuarios abandonan tu sitio rápidamente? Un diseño intuitivo reduce la tasa de rebote hasta un 50%.",
     },
     {
       id: 6,
@@ -52,6 +62,8 @@ const Services = () => {
       title: "SEO",
       description:
         "Optimización de tu sitio web para que aparezca en los primeros resultados de Google y otros buscadores.",
+      solves:
+        "¿Nadie encuentra tu negocio online? El 75% de usuarios nunca pasan de la primera página de Google.",
     },
   ];
 
@@ -77,18 +89,28 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className="flex flex-col items-center gap-4 rounded-lg border border-primary/20 bg-white hover:bg-background-secondary p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 group animate-fade-in-up"
+                className="items-center flex flex-col gap-4 rounded-lg border border-primary/20 bg-white hover:bg-background-secondary p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 group animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
+                {/* Icon */}
                 <div className="text-primary group-hover:text-primary-hover transition-colors">
                   {service.icon}
                 </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-base text-center font-semibold leading-tight text-text group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm font-normal leading-normal text-center text-text-secondary">
-                    {service.description}
+
+                {/* Title */}
+                <h3 className="text-base font-semibold leading-tight text-text group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-center text-sm font-normal leading-normal text-text-secondary">
+                  {service.description}
+                </p>
+
+                {/* Problem it solves */}
+                <div className="mt-2 pt-4 border-t border-primary/10">
+                  <p className="text-center text-sm font-medium leading-relaxed text-primary/80 italic">
+                    💡 {service.solves}
                   </p>
                 </div>
               </div>

@@ -56,7 +56,7 @@ const Hero = () => {
             <span className="text-primary font-semibold">
               experiencias digitales excepcionales
             </span>
-            . Soluciones web modernas y escalables.
+            . Aplicaciones web y moviles modernas y escalables.
           </p>
 
           {/* Botones */}

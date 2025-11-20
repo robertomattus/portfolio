@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { HiMenu, HiX, HiDownload } from "react-icons/hi";
-import CV from "@/assets/CV.pdf";
+import { documents } from "@/assets/index.js";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = CV;
+    link.href = documents.cv;
     link.download = "Curriculum Roberto Mattus.pdf";
     document.body.appendChild(link);
     link.click();
@@ -93,9 +93,9 @@ const Navbar = () => {
             <div className="hidden md:flex md:items-center">
               <button
                 onClick={handleDownloadResume}
-                className="group relative bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2 transform hover:-translate-y-0.5 overflow-hidden"
+                className="cursor-pointer group relative bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2 transform hover:-translate-y-0.5 overflow-hidden"
               >
-                <span className="relative z-10 flex items-center gap-2 hover:cursor-pointer">
+                <span className="relative z-10 flex items-center gap-2">
                   <HiDownload className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" />
                   Descargar CV
                 </span>
@@ -172,7 +172,7 @@ const Navbar = () => {
               className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
             >
               <HiDownload className="w-4 h-4" />
-              Descargar CV
+              Descargar documents.cv
             </button>
           </div>
         </div>

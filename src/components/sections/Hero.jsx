@@ -63,7 +63,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up">
             <a
               href="#projects"
-              className="group relative px-8 py-3 bg-primary hover:bg-primary-hover text-white text-base font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden"
+              className="cursor-pointer group relative px-8 py-3 bg-primary hover:bg-primary-hover text-white text-base font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Ver proyectos

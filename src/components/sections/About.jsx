@@ -17,7 +17,7 @@ import {
 } from "react-icons/si";
 import { HiDownload } from "react-icons/hi";
 import { images } from "@/assets/index.js";
-import CV from "@/assets/CV.pdf";
+import { documents } from "@/assets/index.js";
 
 const About = () => {
   const skills = [
@@ -37,7 +37,7 @@ const About = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = CV;
+    link.href = documents.cv;
     link.download = "Curriculum Roberto Mattus.pdf";
     document.body.appendChild(link);
     link.click();
@@ -154,17 +154,20 @@ const About = () => {
             </div>
           </div>
 
-          {/* Optional: Download CV Button */}
+          {/* Optional: Download documents.cv Button */}
           <div
             className="flex justify-center mt-12 px-4 animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
             <button
               onClick={handleDownloadResume}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
+              className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden cursor-pointer"
             >
-              <HiDownload className="w-5 h-5" />
-              Descargar CV
+              <span className="relative z-10 flex items-center gap-2">
+                <HiDownload className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
+                Descargar CV
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-hover to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </div>
         </div>

@@ -1,4 +1,9 @@
 import profileImage from "@/assets/images/profile-image.png";
+import analyze from "@/assets/images/analyze.png";
+import analyze1 from "@/assets/images/analyze1.png";
+import analyze2 from "@/assets/images/analyze2.png";
+import analyze3 from "@/assets/images/analyze3.png";
+import analyze4 from "@/assets/images/analyze4.png";
 import pilates from "@/assets/images/pilates.jpg";
 import pilates1 from "@/assets/images/pilates1.png";
 import pilates2 from "@/assets/images/pilates2.png";
@@ -36,6 +41,11 @@ export const images = {
   netflix,
   netflix1,
   netflix2,
+  analyze,
+  analyze1,
+  analyze2,
+  analyze3,
+  analyze4,
 };
 
 export const documents = {

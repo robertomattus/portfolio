@@ -32,8 +32,8 @@ const Projects = () => {
         "Clerk",
         "Cloudinary",
       ],
-      github: "https://github.com/robertomattus/pilates-app",
-      demo: "https://flexstrongpilates.vercel.app/",
+      github: "https://github.com/robertomattus/pilates2.0",
+      demo: "https://demo-pilates-app.vercel.app/",
       featured: true,
       keyFeatures: [
         "Autenticación y autorización con Google",

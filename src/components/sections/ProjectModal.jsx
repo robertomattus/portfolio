@@ -167,7 +167,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
               <h2 className="text-text text-2xl sm:text-3xl font-black leading-tight tracking-tight">
                 {project.title}
               </h2>
-              <p className="text-text-secondary text-sm font-normal leading-normal">
+              <p className="text-text-secondary text-sm font-normal leading-normal text-justify">
                 {project.fullDescription || project.description}
               </p>
             </div>

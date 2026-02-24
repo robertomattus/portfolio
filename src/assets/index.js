@@ -22,6 +22,13 @@ import netflix1 from "@/assets/images/netflix1.png";
 import netflix2 from "@/assets/images/netflix2.png";
 import cv from "@/assets/documents/cv.pdf";
 import slide from "@/assets/documents/slide.pdf";
+import lazyena from "@/assets/images/lazyena.png";
+import lazyena1 from "@/assets/images/lazyena1.png";
+import lazyena2 from "@/assets/images/lazyena2.png";
+import lazyena3 from "@/assets/images/lazyena3.png";
+import lazyena4 from "@/assets/images/lazyena4.png";
+import qr from "./images/qr.png";
+import qr1 from "./images/qr1.png";
 
 export const images = {
   profileImage,
@@ -46,6 +53,13 @@ export const images = {
   analyze2,
   analyze3,
   analyze4,
+  lazyena,
+  lazyena1,
+  lazyena2,
+  lazyena3,
+  lazyena4,
+  qr,
+  qr1,
 };
 
 export const documents = {

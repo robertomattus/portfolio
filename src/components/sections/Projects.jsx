@@ -11,37 +11,6 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Analyze Landing Page",
-      description:
-        "Landing page corporativa para Analyze Testing Group, laboratorio acreditado especializado en análisis de calidad de agua y servicios ambientales.",
-
-      fullDescription:
-        "Landing page corporativa desarrollada para Analyze Testing Group, un laboratorio de ensayo acreditado bajo la norma NMX-EC-17025-IMNC-2018 y aprobado por CONAGUA para realizar análisis de calidad de agua. El sitio web presenta información institucional de la empresa, incluyendo su historia, misión, visión, valores, certificaciones, servicios especializados y sectores industriales atendidos.\n\nLa plataforma fue diseñada como una página informativa moderna orientada a fortalecer la presencia digital del laboratorio, facilitar el acceso a información clave para clientes potenciales y comunicar su experiencia en muestreo y análisis de aguas residuales. Incluye secciones estructuradas para servicios normativos NOM-SEMARNAT, logros y acreditaciones, principales clientes y medios de contacto.\n\nEl proyecto prioriza una experiencia de usuario clara y profesional mediante un diseño responsivo, navegación intuitiva y optimización SEO básica, permitiendo que la empresa comunique su propuesta de valor, estándares de calidad y compromiso ambiental de manera efectiva.",
-
-      image: images.analyze,
-      images: [
-        images.analyze1,
-        images.analyze2,
-        images.analyze3,
-        images.analyze4,
-      ],
-      technologies: ["React", "Javascript", "Tailwind CSS"],
-      github: "https://github.com/robertomattus/analyze-landing-page",
-      demo: "https://analyze-page.vercel.app/",
-      featured: false,
-      keyFeatures: [
-        "Diseño corporativo enfocado en identidad empresarial",
-        "Secciones informativas sobre historia, misión, visión y valores",
-        "Presentación clara de servicios bajo normas NOM-SEMARNAT",
-        "Diseño responsivo optimizado para dispositivos móviles",
-        "Formulario de contacto con validación de datos",
-        "Integración de ubicación y datos de contacto del laboratorio",
-        "Optimización SEO básica para visibilidad empresarial",
-      ],
-      role: "Frontend Developer",
-    },
-    {
-      id: 2,
       title: "Pilates Web App",
       description:
         "Aplicación web para gestión de clases de pilates con reservas y panel de administración.",
@@ -78,7 +47,7 @@ const Projects = () => {
       role: "Full Stack Developer",
     },
     {
-      id: 3,
+      id: 2,
       title: "Food Delivery Web App",
       description:
         "Aplicación web de delivery de comida con carrito de compras, sistema de pedidos y panel de administración.",
@@ -116,7 +85,89 @@ const Projects = () => {
       role: "Full Stack Developer",
     },
     {
+      id: 3,
+      title: "QR Generator Web App",
+      description:
+        "Aplicación web para generar códigos QR personalizados con diferentes formatos y estilos.",
+      fullDescription:
+        "Aplicación web que permite a los usuarios generar códigos QR personalizados con diferentes formatos, estilos y opciones de personalización. Los usuarios pueden ingresar texto o URL, seleccionar el estilo del código QR, y descargarlo en diferentes formatos como PNG o SVG. El sistema incluye un panel de administración para gestionar las configuraciones predeterminadas del generador.",
+      image: images.qr,
+      images: [images.qr, images.qr1],
+      technologies: ["React", "Javascript", "Tailwind CSS"],
+      github: "https://github.com/robertomattus/QR-Generator.git",
+      demo: "https://qr-generatorl.vercel.app/",
+      featured: false,
+      keyFeatures: [
+        "Generación de códigos QR personalizados",
+        "Opciones de personalización de estilo y formato",
+        "Descarga de códigos QR en PNG y SVG",
+      ],
+      role: "Frontend Developer",
+    },
+    {
       id: 4,
+      title: "Lazyena Landing Page",
+      description: "Landing page corporativa para Grupo Lazyena",
+      fullDescription:
+        "Landing page corporativa desarrollada para Grupo Lazyena S.C., empresa especializada en la operación, mantenimiento y diseño de plantas de tratamiento de aguas residuales. El sitio presenta información institucional como historia, misión, visión, valores, servicios y principales clientes, permitiendo a los usuarios conocer la empresa, sus soluciones industriales y establecer contacto directo para cotizaciones y asesoría técnica. La página fue diseñada con enfoque empresarial, navegación clara y diseño responsivo para mejorar la presencia digital de la compañía.",
+      image: images.lazyena,
+      images: [
+        images.lazyena1,
+        images.lazyena2,
+        images.lazyena3,
+        images.lazyena4,
+      ],
+      technologies: ["React", "JavaScript", "Tailwind CSS"],
+      github: "https://github.com/robertomattus/lazyena-landing",
+      demo: "https://lazyena.vercel.app/",
+      featured: false,
+      keyFeatures: [
+        "Sección institucional con historia, misión, visión y valores empresariales",
+        "Presentación estructurada de servicios industriales especializados",
+        "Diseño corporativo enfocado en empresas del sector ambiental e industrial",
+        "Sección de clientes y logros relevantes de la empresa",
+        "Información de contacto y medios de comunicación directa",
+        "Navegación intuitiva optimizada para experiencia de usuario",
+        "Diseño completamente responsivo para dispositivos móviles y escritorio",
+        "Optimización visual para fortalecer la presencia digital empresarial",
+        "Arquitectura frontend moderna basada en componentes reutilizables",
+      ],
+      role: "Frontend Developer",
+    },
+    {
+      id: 5,
+      title: "Analyze Landing Page",
+      description:
+        "Landing page corporativa para Analyze Testing Group, laboratorio acreditado especializado en análisis de calidad de agua y servicios ambientales.",
+
+      fullDescription:
+        "Landing page corporativa desarrollada para Analyze Testing Group, un laboratorio de ensayo acreditado bajo la norma NMX-EC-17025-IMNC-2018 y aprobado por CONAGUA para realizar análisis de calidad de agua. El sitio web presenta información institucional de la empresa, incluyendo su historia, misión, visión, valores, certificaciones, servicios especializados y sectores industriales atendidos.\n\nLa plataforma fue diseñada como una página informativa moderna orientada a fortalecer la presencia digital del laboratorio, facilitar el acceso a información clave para clientes potenciales y comunicar su experiencia en muestreo y análisis de aguas residuales. Incluye secciones estructuradas para servicios normativos NOM-SEMARNAT, logros y acreditaciones, principales clientes y medios de contacto.\n\nEl proyecto prioriza una experiencia de usuario clara y profesional mediante un diseño responsivo, navegación intuitiva y optimización SEO básica, permitiendo que la empresa comunique su propuesta de valor, estándares de calidad y compromiso ambiental de manera efectiva.",
+
+      image: images.analyze,
+      images: [
+        images.analyze1,
+        images.analyze2,
+        images.analyze3,
+        images.analyze4,
+      ],
+      technologies: ["React", "Javascript", "Tailwind CSS"],
+      github: "https://github.com/robertomattus/analyze-landing-page",
+      demo: "https://analyze-page.vercel.app/",
+      featured: false,
+      keyFeatures: [
+        "Diseño corporativo enfocado en identidad empresarial",
+        "Secciones informativas sobre historia, misión, visión y valores",
+        "Presentación clara de servicios bajo normas NOM-SEMARNAT",
+        "Diseño responsivo optimizado para dispositivos móviles",
+        "Formulario de contacto con validación de datos",
+        "Integración de ubicación y datos de contacto del laboratorio",
+        "Optimización SEO básica para visibilidad empresarial",
+      ],
+      role: "Frontend Developer",
+    },
+
+    {
+      id: 6,
       title: "Dashboard Skeleton",
       description:
         "Panel de control con gráficos interactivos y análisis de datos en tiempo real.",
@@ -137,7 +188,7 @@ const Projects = () => {
       role: "Full Stack Developer & Data Visualization Specialist",
     },
     {
-      id: 5,
+      id: 7,
       title: "Netflix Clone",
       description:
         "Réplica de la interfaz de Netflix con sistema de autenticación, catálogo de películas y gestión de favoritos.",

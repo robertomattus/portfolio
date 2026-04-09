@@ -29,6 +29,11 @@ import lazyena3 from "@/assets/images/lazyena3.png";
 import lazyena4 from "@/assets/images/lazyena4.png";
 import qr from "./images/qr.png";
 import qr1 from "./images/qr1.png";
+import flexstrong from "./images/flexstrong.png";
+import flexstrong1 from "./images/flexstrong1.png";
+import flexstrong2 from "./images/flexstrong2.png";
+import flexstrong3 from "./images/flexstrong3.png";
+import flexstrong4 from "./images/flexstrong4.png";
 
 export const images = {
   profileImage,
@@ -60,6 +65,11 @@ export const images = {
   lazyena4,
   qr,
   qr1,
+  flexstrong,
+  flexstrong1,
+  flexstrong2,
+  flexstrong3,
+  flexstrong4,
 };
 
 export const documents = {

@@ -208,12 +208,12 @@ export const projects = [
       "Aplicación web para gestión de clases de pilates con reservas y panel de administración.",
     fullDescription:
       "Aplicación web para estudios de pilates que permite a los usuarios iniciar sesión un usuario creado manualmente por el administrador, ver y reservar clases, visualizar posts y gestionar sus reservas. Las opciones de administrador permite a los administradores gestionar clases, posts, usuarios, reservas y ver reportes de ingresos y asistencia.",
-    image: images.pilates,
+    image: images.flexstrong,
     images: [
-      images.pilates1,
-      images.pilates2,
-      images.pilates3,
-      images.pilates4,
+      images.flexstrong1,
+      images.flexstrong2,
+      images.flexstrong3,
+      images.flexstrong4,
     ],
     technologies: [
       "React",

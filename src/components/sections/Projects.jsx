@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import ProjectModal from "./ProjectModal";
 import { projects } from "@/assets/constants/projects.js";
 
@@ -35,82 +35,88 @@ const Projects = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="relative flex-1 px-4 sm:px-6 lg:px-8 py-10 md:py-16 bg-background"
-    >
-      <div className="mx-auto max-w-7xl">
-        {/* Page Heading */}
-        <div className="flex flex-wrap justify-between gap-4 px-4 pb-8 animate-fade-in-up">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
-              Proyectos Recientes
-            </h1>
-            <p className="text-base font-normal leading-normal text-text-secondary">
-              Una selección de proyectos que muestran mis habilidades en
-              desarrollo y diseño.
+    <section id="projects" className="relative bg-transparent py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* ── Encabezado Editorial ── */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 animate-fade-in-up">
+          <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+            <h2 className="font-display font-extrabold text-[var(--color-text)] text-4xl sm:text-5xl tracking-tight mb-4">
+              Trabajo Reciente
+            </h2>
+            <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed">
+              Una cuidada selección de aplicaciones escalables, interfaces refinadas 
+              y arquitecturas que resuelven problemas del mundo real.
             </p>
+          </div>
+          <div className="shrink-0 flex justify-center md:justify-end">
+            <a
+              href="https://github.com/robertomattus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--color-background-secondary)] text-[var(--color-text)] hover:bg-[var(--color-border-subtle)] text-sm font-semibold rounded-full transition-colors focus-visible:outline-none"
+            >
+              <FaGithub className="text-base" />
+              Explorar Github
+            </a>
           </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 p-4">
+        {/* ── Grilla de Proyectos ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {reversedProjects.map((project, index) => (
             <article
               key={project.id}
               onClick={() => openModal(project, index)}
-              className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 cursor-pointer animate-fade-in-up"
+              className="group cursor-pointer flex flex-col animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Container */}
-              <div className="overflow-hidden">
+              {/* Imagen (estilo "Monograph") */}
+              <div className="overflow-hidden rounded-3xl bg-[var(--color-background)] aspect-[4/3] mb-6 relative shadow-sm transition-shadow duration-300 group-hover:shadow-md">
                 <div
-                  className="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                  className="w-full h-full bg-center bg-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   style={{ backgroundImage: `url(${project.image})` }}
                   role="img"
                   aria-label={project.title}
                 />
+                
+                {/* Overlay muy sutil en hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
               </div>
 
-              {/* Content */}
-              <div className="flex flex-1 flex-col p-5">
-                {/* Title */}
-                <h3 className="text-lg font-semibold leading-normal text-text group-hover:text-primary transition-colors">
+              {/* Título & Top Info */}
+              <div className="flex justify-between items-start mb-3 gap-4">
+                <h3 className="font-display font-bold text-2xl leading-tight text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">
                   {project.title}
                 </h3>
+                <span className="w-8 h-8 rounded-full bg-[var(--color-background-secondary)] flex items-center justify-center text-[var(--color-text-secondary)] group-hover:text-[var(--color-primary)] group-hover:bg-[var(--color-primary-subtle)] transition-colors shrink-0">
+                  <FaExternalLinkAlt className="w-3 h-3" />
+                </span>
+              </div>
 
-                {/* Description */}
-                <p className="text-sm font-normal leading-normal text-text-secondary mt-2 line-clamp-2">
-                  {project.description}
-                </p>
+              {/* Descripción */}
+              <p className="text-[var(--color-text-secondary)] text-[15px] leading-relaxed mb-6 line-clamp-2">
+                {project.description}
+              </p>
 
-                {/* Technologies */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              {/* Tech Stack (Chips minimalistas) */}
+              <div className="mt-auto flex flex-wrap gap-2">
+                {project.technologies.slice(0, 4).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex px-3 py-1 bg-[var(--color-background-secondary)] text-[var(--color-text-secondary)] text-xs font-medium rounded-full border border-[var(--color-border-subtle)]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 4 && (
+                  <span className="inline-flex px-2 py-1 bg-transparent text-[var(--color-text-secondary)] text-xs font-medium content-center items-center">
+                    +{project.technologies.length - 4}
+                  </span>
+                )}
               </div>
             </article>
           ))}
-        </div>
-
-        {/* CTA Button - Ver más proyectos */}
-        <div className="flex justify-center mt-12 px-4 animate-fade-in">
-          <a
-            href="https://github.com/robertomattus"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-[#181717] text-text hover:text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border-2 border-primary/10 hover:border-primary/30 transform hover:-translate-y-1"
-          >
-            <FaGithub size={20} />
-            Ver más proyectos en GitHub
-          </a>
         </div>
       </div>
 

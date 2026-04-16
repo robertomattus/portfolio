@@ -4,67 +4,61 @@ import {
   FaBullhorn,
   FaPalette,
   FaChartLine,
-  FaEye,
   FaDownload,
 } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
+import { HiArrowRight } from "react-icons/hi";
 import { documents } from "@/assets/index.js";
 
 const Services = () => {
   const services = [
     {
       id: 1,
-      icon: <MdWeb className="text-xl" />,
-      title: "Landing Page",
+      icon: <MdWeb className="text-2xl" />,
+      title: "Landing Pages",
       description:
-        "Creación de páginas web diseñadas específicamente para convertir visitantes en clientes potenciales.",
-      solves:
-        "¿Tienes tráfico pero pocas conversiones? Una landing optimizada puede aumentar tus ventas hasta un 300%.",
+        "Páginas optimizadas para conversiones, diseñadas para transformar visitantes en clientes reales.",
+      solves: "Aumenta la tasa de conversión con diseño estratégico.",
     },
     {
       id: 2,
-      icon: <FaLaptopCode className="text-xl" />,
+      icon: <FaLaptopCode className="text-2xl" />,
       title: "Aplicaciones Web",
       description:
-        "Desarrollo de soluciones web a medida que se adaptan y crecen junto con tu negocio.",
-      solves:
-        "¿Procesos manuales que consumen tiempo? Automatiza tu negocio y reduce costos operativos.",
+        "Sistemas a medida, rápidos y escalables que automatizan y potencian los procesos de tu negocio.",
+      solves: "Reduce costos operativos con software a la medida.",
     },
     {
       id: 3,
-      icon: <FaMobileAlt className="text-xl" />,
-      title: "Aplicaciones Móviles",
+      icon: <FaMobileAlt className="text-2xl" />,
+      title: "Apps Móviles",
       description:
-        "Creación de aplicaciones fáciles de usar y atractivas para teléfonos iPhone y Android.",
-      solves:
-        "¿Tus clientes necesitan acceso desde cualquier lugar? Lleva tu servicio al bolsillo de tus usuarios.",
+        "Desarrollo cross-platform y nativo para iOS y Android, llevando tus servicios directamente al bolsillo del usuario.",
+      solves: "Fideliza clientes con accesibilidad dondequiera que estén.",
     },
     {
       id: 4,
-      icon: <FaBullhorn className="text-xl" />,
-      title: "Marketing",
+      icon: <FaPalette className="text-2xl" />,
+      title: "Diseño UI/UX",
       description:
-        "Estrategias digitales y de marca para aumentar tu visibilidad y atraer más clientes en internet.",
-      solves:
-        "¿Inviertes en publicidad sin resultados claros? Optimiza tu presupuesto con estrategias basadas en datos.",
+        "Interfaces premium, intuitivas y accesibles. Sistemas de diseño pensados en la retención de usuarios.",
+      solves: "Reduce la tasa de rebote creando experiencias inmersivas.",
     },
     {
       id: 5,
-      icon: <FaPalette className="text-xl" />,
-      title: "UI/UX Design",
+      icon: <FaChartLine className="text-2xl" />,
+      title: "Auditoría SEO",
       description:
-        "Diseño de interfaces visuales y experiencias que hacen que tus productos digitales sean fáciles y agradables de usar.",
-      solves:
-        "¿Los usuarios abandonan tu sitio rápidamente? Un diseño intuitivo reduce la tasa de rebote hasta un 50%.",
+        "Estructuramos tu proyecto desde los cimientos para que los motores de búsqueda lo amen de forma orgánica.",
+      solves: "Multiplica el tráfico sin depender solo de pauta.",
     },
     {
       id: 6,
-      icon: <FaChartLine className="text-xl" />,
-      title: "SEO",
+      icon: <FaBullhorn className="text-2xl" />,
+      title: "Estrategia Digital",
       description:
-        "Optimización de tu sitio web para que aparezca en los primeros resultados de Google y otros buscadores.",
-      solves:
-        "¿Nadie encuentra tu negocio online? El 75% de usuarios nunca pasan de la primera página de Google.",
+        "Alineamos tu producto tecnológico con objetivos de marketing claros para maximizar el ROI.",
+      solves: "Convierte tu aplicación en el centro de tu negocio.",
     },
   ];
 
@@ -79,94 +73,83 @@ const Services = () => {
 
   const handleViewPresentation = () => {
     window.open(
-      "https://www.canva.com/design/DAG5L63V7Ac/MFg0o1DSFS94R-Y9amAjAg/view?utm_content=DAG5L63V7Ac&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haeef436b5a",
+      "https://www.canva.com/design/DAG5L63V7Ac/MFg0o1DSFS94R-Y9amAjAg/view",
       "_blank",
       "noopener,noreferrer"
     );
   };
 
   return (
-    <section id="services" className="relative flex-1 bg-background">
-      <div className="px-4 sm:px-6 lg:px-8 py-10 md:py-16">
-        <div className="mx-auto max-w-7xl">
-          {/* Header Section */}
-          <div className="flex flex-wrap justify-between gap-4 px-4 pb-8 animate-fade-in-up">
-            <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-black leading-tight tracking-tight text-text sm:text-4xl">
-                Mis Servicios
-              </h1>
-              <p className="text-base font-normal leading-normal text-justify text-text-secondary">
-                Soluciones creativas y técnicas para llevar tu proyecto al
-                siguiente nivel.
-              </p>
-            </div>
-          </div>
+    <section id="services" className="relative bg-transparent py-24 sm:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* ── Encabezado Editorial ── */}
+        <div className="max-w-2xl mb-16 lg:mb-24 mx-auto lg:mx-0 text-center lg:text-left animate-fade-in-up">
+          <h2 className="font-display font-extrabold text-[var(--color-text)] text-4xl sm:text-5xl tracking-tight mb-6">
+            Servicios adaptados a la era digital.
+          </h2>
+          <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed">
+            Desde la concepción de la idea hasta el despliegue en producción. 
+            Combino diseño visual exigente con ingeniería de software robusta 
+            para crear soluciones que verdaderamente impactan.
+          </p>
+        </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className="items-center flex flex-col gap-4 rounded-lg border border-primary/20 bg-white hover:bg-background-secondary p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/40 hover:-translate-y-1 group animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <div className="text-primary group-hover:text-primary-hover transition-colors">
-                  {service.icon}
-                </div>
-
-                <h3 className="text-base font-semibold leading-tight text-text group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-
-                <p className="text-center text-sm font-normal leading-normal text-text-secondary">
-                  {service.description}
-                </p>
-
-                <div className="mt-2 pt-4 border-t border-primary/10">
-                  <p className="text-center text-sm font-medium leading-relaxed text-primary/80 italic">
-                    💡 {service.solves}
-                  </p>
-                </div>
+        {/* ── Grilla de Servicios ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-24">
+          {services.map((service, index) => (
+            <div
+              key={service.id}
+              className="group flex flex-col items-center md:items-start text-center md:text-left bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="w-14 h-14 rounded-full bg-[var(--color-background-secondary)] flex items-center justify-center text-[var(--color-text)] mb-6 transition-colors duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
+                {service.icon}
               </div>
-            ))}
-          </div>
-
-          {/* Call to Action Section */}
-          <div className="mt-6 p-4">
-            <div className="p-6 md:p-8 bg-white border border-secondary/20 rounded-lg shadow-lg text-center animate-fade-in-up">
-              <h2 className="text-xl font-bold text-text mb-3 sm:text-2xl">
-                ¿Quieres saber más?
-              </h2>
-              <p className="text-base text-text-secondary mb-6 max-w-3xl mx-auto">
-                Descarga o visualiza mi presentación completa para conocer en
-                detalle cómo puedo ayudarte a escalar tu proyecto.
+              
+              <h3 className="font-display font-bold text-xl text-[var(--color-text)] mb-3 leading-tight">
+                {service.title}
+              </h3>
+              
+              <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6 flex-1">
+                {service.description}
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                {/* Botón para Ver Presentación */}
-                <button
-                  onClick={handleViewPresentation}
-                  className="cursor-pointer group relative inline-flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <FaEye className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300" />
-                    Ver Presentación
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-                <button
-                  onClick={handleDownloadSlide}
-                  className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/80 backdrop-blur-sm hover:bg-white text-primary text-base font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary/20 hover:border-primary transform hover:-translate-y-0.5 overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <FaDownload className="w-5 h-5 transform group-hover:translate-y-0.5 transition-transform duration-300" />
-                    Descargar (PDF)
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
+              
+              <div className="text-sm font-medium text-[var(--color-text)] bg-[var(--color-background)] px-4 py-2.5 rounded-xl border border-[var(--color-border-subtle)] w-full">
+                <span className="text-[var(--color-primary)] mr-2">✦</span>
+                {service.solves}
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* ── Call to action ── */}
+        <div className="bg-[#1b1c1c] rounded-[2.5rem] p-10 sm:p-16 text-center animate-fade-in-up">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+            ¿Buscas conocer en detalle mi metodología?
+          </h2>
+          <p className="text-[#aaaaaa] text-lg max-w-2xl mx-auto mb-10">
+            Revisa la presentación completa ("Deck") sobre mi proceso de trabajo, tecnologías y cómo garantizamos resultados.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <button
+              onClick={handleViewPresentation}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-base font-semibold rounded-full transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none"
+            >
+              Ver Presentación interactiva
+              <HiArrowRight className="w-4 h-4 ml-1" />
+            </button>
+            <button
+              onClick={handleDownloadSlide}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent border border-[#555555] hover:border-white text-white text-base font-semibold rounded-full transition-all duration-200 focus-visible:outline-none"
+            >
+              <FaDownload className="w-4 h-4 mr-1" />
+              Descargar en PDF
+            </button>
           </div>
         </div>
+
       </div>
     </section>
   );

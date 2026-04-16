@@ -1,4 +1,5 @@
 import Navbar from "./components/layout/Navbar";
+import InteractiveGrid from "./components/layout/InteractiveGrid";
 import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Footer from "./components/layout/Footer";
@@ -8,9 +9,10 @@ import Contact from "./components/sections/Contact";
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <InteractiveGrid />
       <Navbar />
-      <main>
+      <main id="main-content" className="relative z-0">
         <Hero />
         <Services />
         <Projects />

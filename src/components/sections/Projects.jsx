@@ -35,16 +35,16 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="relative bg-transparent py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="relative flex items-center min-h-[100svh] bg-transparent py-16 sm:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ── Encabezado Editorial ── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 animate-fade-in-up">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 animate-fade-in-up">
           <div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
-            <h2 className="font-display font-extrabold text-[var(--color-text)] text-4xl sm:text-5xl tracking-tight mb-4">
+            <h2 className="font-display font-extrabold text-[var(--color-text)] text-3xl sm:text-4xl tracking-tight mb-3">
               Trabajo Reciente
             </h2>
-            <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed">
+            <p className="text-[var(--color-text-secondary)] text-base leading-relaxed">
               Una cuidada selección de aplicaciones escalables, interfaces refinadas 
               y arquitecturas que resuelven problemas del mundo real.
             </p>
@@ -54,16 +54,16 @@ const Projects = () => {
               href="https://github.com/robertomattus"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--color-background-secondary)] text-[var(--color-text)] hover:bg-[var(--color-border-subtle)] text-sm font-semibold rounded-full transition-colors focus-visible:outline-none"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[var(--color-background-secondary)] text-[var(--color-text)] hover:bg-[var(--color-border-subtle)] text-[0.85rem] font-semibold rounded-full transition-colors focus-visible:outline-none"
             >
-              <FaGithub className="text-base" />
+              <FaGithub className="text-[0.95rem]" />
               Explorar Github
             </a>
           </div>
         </div>
 
         {/* ── Grilla de Proyectos ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
           {reversedProjects.map((project, index) => (
             <article
               key={project.id}
@@ -85,8 +85,8 @@ const Projects = () => {
               </div>
 
               {/* Título & Top Info */}
-              <div className="flex justify-between items-start mb-3 gap-4">
-                <h3 className="font-display font-bold text-2xl leading-tight text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">
+              <div className="flex justify-between items-start mb-2 gap-3">
+                <h3 className="font-display font-bold text-xl leading-tight text-[var(--color-text)] transition-colors group-hover:text-[var(--color-primary)]">
                   {project.title}
                 </h3>
                 <span className="w-8 h-8 rounded-full bg-[var(--color-background-secondary)] flex items-center justify-center text-[var(--color-text-secondary)] group-hover:text-[var(--color-primary)] group-hover:bg-[var(--color-primary-subtle)] transition-colors shrink-0">
@@ -95,7 +95,7 @@ const Projects = () => {
               </div>
 
               {/* Descripción */}
-              <p className="text-[var(--color-text-secondary)] text-[15px] leading-relaxed mb-6 line-clamp-2">
+              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-5 line-clamp-2">
                 {project.description}
               </p>
 
@@ -104,7 +104,7 @@ const Projects = () => {
                 {project.technologies.slice(0, 4).map((tech, i) => (
                   <span
                     key={i}
-                    className="inline-flex px-3 py-1 bg-[var(--color-background-secondary)] text-[var(--color-text-secondary)] text-xs font-medium rounded-full border border-[var(--color-border-subtle)]"
+                    className="inline-flex px-2.5 py-1 bg-[var(--color-background-secondary)] text-[var(--color-text-secondary)] text-[0.65rem] font-medium rounded-full border border-[var(--color-border-subtle)] uppercase tracking-wider"
                   >
                     {tech}
                   </span>

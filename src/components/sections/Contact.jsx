@@ -105,16 +105,16 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative bg-transparent py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative flex items-center min-h-[100svh] bg-transparent py-16 sm:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           {/* ── Columna Izquierda: Copy y Métodos ── */}
           <div className="lg:col-span-5 flex flex-col animate-fade-in-up">
-            <h2 className="font-display font-bold text-[var(--color-text)] text-4xl sm:text-5xl leading-tight tracking-tight mb-6">
+            <h2 className="font-display font-bold text-[var(--color-text)] text-3xl sm:text-4xl leading-tight tracking-tight mb-4">
               Hablemos sobre tu<br/>próximo proyecto.
             </h2>
-            <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-12 max-w-md">
+            <p className="text-[var(--color-text-secondary)] text-base leading-relaxed mb-10 max-w-md">
               Ya sea una nueva aplicación, una modernización o simplemente explorar cómo podemos colaborar. Me encantaría escuchar lo que tienes en mente.
             </p>
 
@@ -126,9 +126,9 @@ const Contact = () => {
                   href={method.href}
                   target={method.external ? "_blank" : undefined}
                   rel={method.external ? "noopener noreferrer" : undefined}
-                  className="group flex flex-col items-start bg-[var(--color-background)] rounded-3xl p-6 transition-all duration-300 hover:bg-[var(--color-background-secondary)]"
+                  className="group flex flex-col items-start bg-[var(--color-background)] rounded-[1.5rem] p-5 transition-all duration-300 hover:bg-[var(--color-background-secondary)]"
                 >
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[var(--color-text)] shadow-sm mb-4 transition-colors group-hover:text-[var(--color-primary)]">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[var(--color-text)] shadow-sm mb-3 transition-colors group-hover:text-[var(--color-primary)]">
                     {method.icon}
                   </div>
                   <h3 className="font-semibold text-[var(--color-text)] text-lg mb-1">{method.label}</h3>
@@ -152,8 +152,8 @@ const Contact = () => {
 
           {/* ── Columna Derecha: Formulario ── */}
           <div className="lg:col-span-7 lg:pl-8 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-            <div className="bg-white border text-left border-[var(--color-border)] rounded-[2rem] p-8 sm:p-12 shadow-sm">
-              <h3 className="font-display font-bold text-[var(--color-text)] text-2xl mb-8">
+            <div className="bg-white border text-left border-[var(--color-border)] rounded-[1.5rem] p-6 sm:p-8 shadow-sm">
+              <h3 className="font-display font-bold text-[var(--color-text)] text-xl mb-6">
                 Envíame un mensaje
               </h3>
 
@@ -168,7 +168,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3.5 text-[var(--color-text)] outline-none transition-all border ${errors.name ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
+                      className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3 text-[0.95rem] outline-none transition-all border ${errors.name ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
                       placeholder="Jane Doe"
                     />
                     {errors.name && <span className="text-red-500 text-xs px-1">{errors.name}</span>}
@@ -182,7 +182,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3.5 text-[var(--color-text)] outline-none transition-all border ${errors.email ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
+                      className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3 text-[0.95rem] outline-none transition-all border ${errors.email ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
                       placeholder="jane@email.com"
                     />
                     {errors.email && <span className="text-red-500 text-xs px-1">{errors.email}</span>}
@@ -197,7 +197,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3.5 text-[var(--color-text)] outline-none transition-all border ${errors.subject ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
+                    className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3 text-[0.95rem] outline-none transition-all border ${errors.subject ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
                     placeholder="Diseño de Sitio Web / App Móvil"
                   />
                   {errors.subject && <span className="text-red-500 text-xs px-1">{errors.subject}</span>}
@@ -211,7 +211,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
-                    className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3.5 text-[var(--color-text)] outline-none transition-all border resize-y min-h-[140px] ${errors.message ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
+                    className={`w-full bg-[var(--color-background)] rounded-xl px-4 py-3 text-[0.95rem] outline-none transition-all border resize-y min-h-[140px] ${errors.message ? "border-red-500" : "border-transparent focus:border-[var(--color-primary)]"}`}
                     placeholder="Cuéntame sobre tu proyecto..."
                   />
                   {errors.message && <span className="text-red-500 text-xs px-1">{errors.message}</span>}
@@ -233,7 +233,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-2 flex items-center justify-center gap-2 w-full py-4 bg-[var(--color-text)] text-white text-base font-semibold rounded-full hover:bg-black transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-text)] disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="mt-2 flex items-center justify-center gap-2 w-full py-3.5 bg-[var(--color-text)] text-white text-[0.95rem] font-semibold rounded-full hover:bg-black transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-text)] disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     "Enviando..."

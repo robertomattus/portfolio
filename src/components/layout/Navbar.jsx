@@ -81,10 +81,10 @@ const Navbar = () => {
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 rounded-lg"
             aria-label="Roberto Mattus — Inicio"
           >
-            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[var(--color-primary)] text-white font-bold text-sm font-display select-none">
+            <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[var(--color-primary)] text-white font-bold text-xs font-display select-none">
               RM
             </span>
-            <span className="font-display font-bold text-[var(--color-text)] text-base leading-none">
+            <span className="font-display font-bold text-[var(--color-text)] text-[0.95rem] leading-none">
               Roberto Mattus
             </span>
           </a>
@@ -96,7 +96,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 role="listitem"
-                className="relative px-3 py-2 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 group rounded-md"
+                className="relative px-3 py-1.5 text-[0.85rem] font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors duration-200 group rounded-md"
               >
                 {link.name}
                 <span className="absolute bottom-1 left-3 right-3 h-px bg-[var(--color-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
@@ -108,10 +108,10 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <button
               onClick={handleDownloadResume}
-              className="flex items-center gap-1.5 px-5 py-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-sm font-semibold rounded-full transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
+              className="flex items-center gap-1.5 px-4 py-1.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-[0.8rem] font-semibold rounded-full transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
               aria-label="Descargar currículum de Roberto Mattus en PDF"
             >
-              <HiDownload className="w-4 h-4" aria-hidden="true" />
+              <HiDownload className="w-[14px] h-[14px]" aria-hidden="true" />
               Descargar CV
             </button>
           </div>

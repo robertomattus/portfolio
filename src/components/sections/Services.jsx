@@ -80,15 +80,15 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="relative bg-transparent py-24 sm:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="relative flex items-center min-h-[100svh] bg-transparent py-16 sm:py-24 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ── Encabezado Editorial ── */}
-        <div className="max-w-2xl mb-16 lg:mb-24 mx-auto lg:mx-0 text-center lg:text-left animate-fade-in-up">
-          <h2 className="font-display font-extrabold text-[var(--color-text)] text-4xl sm:text-5xl tracking-tight mb-6">
+        <div className="max-w-2xl mb-12 lg:mb-16 mx-auto lg:mx-0 text-center lg:text-left animate-fade-in-up">
+          <h2 className="font-display font-extrabold text-[var(--color-text)] text-3xl sm:text-4xl tracking-tight mb-4">
             Servicios adaptados a la era digital.
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed">
+          <p className="text-[var(--color-text-secondary)] text-base leading-relaxed">
             Desde la concepción de la idea hasta el despliegue en producción. 
             Combino diseño visual exigente con ingeniería de software robusta 
             para crear soluciones que verdaderamente impactan.
@@ -96,22 +96,22 @@ const Services = () => {
         </div>
 
         {/* ── Grilla de Servicios ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 mb-16">
           {services.map((service, index) => (
             <div
               key={service.id}
-              className="group flex flex-col items-center md:items-start text-center md:text-left bg-white p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 animate-fade-in-up"
+              className="group flex flex-col items-center md:items-start text-center md:text-left bg-white p-6 rounded-[1.5rem] shadow-sm hover:shadow-md transition-shadow duration-300 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-14 h-14 rounded-full bg-[var(--color-background-secondary)] flex items-center justify-center text-[var(--color-text)] mb-6 transition-colors duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
+              <div className="w-12 h-12 rounded-full bg-[var(--color-background-secondary)] flex items-center justify-center text-[var(--color-text)] mb-4 transition-colors duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
                 {service.icon}
               </div>
               
-              <h3 className="font-display font-bold text-xl text-[var(--color-text)] mb-3 leading-tight">
+              <h3 className="font-display font-bold text-lg text-[var(--color-text)] mb-2 leading-tight">
                 {service.title}
               </h3>
               
-              <p className="text-[var(--color-text-secondary)] leading-relaxed mb-6 flex-1">
+              <p className="text-[var(--color-text-secondary)] text-[0.85rem] leading-relaxed mb-5 flex-1">
                 {service.description}
               </p>
               
@@ -124,27 +124,27 @@ const Services = () => {
         </div>
 
         {/* ── Call to action ── */}
-        <div className="bg-[#1b1c1c] rounded-[2.5rem] p-10 sm:p-16 text-center animate-fade-in-up">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
+        <div className="bg-[#1b1c1c] rounded-[2rem] p-8 sm:p-12 text-center animate-fade-in-up">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl text-white mb-3">
             ¿Buscas conocer en detalle mi metodología?
           </h2>
-          <p className="text-[#aaaaaa] text-lg max-w-2xl mx-auto mb-10">
+          <p className="text-[#aaaaaa] text-base max-w-xl mx-auto mb-8">
             Revisa la presentación completa ("Deck") sobre mi proceso de trabajo, tecnologías y cómo garantizamos resultados.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={handleViewPresentation}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-base font-semibold rounded-full transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white text-sm font-semibold rounded-full transition-all duration-200 hover:scale-[1.02] focus-visible:outline-none"
             >
               Ver Presentación interactiva
-              <HiArrowRight className="w-4 h-4 ml-1" />
+              <HiArrowRight className="w-3.5 h-3.5 ml-1" />
             </button>
             <button
               onClick={handleDownloadSlide}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent border border-[#555555] hover:border-white text-white text-base font-semibold rounded-full transition-all duration-200 focus-visible:outline-none"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-[#555555] hover:border-white text-white text-sm font-semibold rounded-full transition-all duration-200 focus-visible:outline-none"
             >
-              <FaDownload className="w-4 h-4 mr-1" />
+              <FaDownload className="w-3.5 h-3.5 mr-1" />
               Descargar en PDF
             </button>
           </div>

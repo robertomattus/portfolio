@@ -39,7 +39,7 @@ const ProjectModal = ({ project, isOpen, onClose, onNext, onPrev }) => {
   const images = project.images || [project.image];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-6 lg:p-8 animate-fade-in">
       {/* Background Overlay */}
       <div
         className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"

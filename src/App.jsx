@@ -12,7 +12,7 @@ function App() {
     <div className="min-h-screen relative">
       <InteractiveGrid />
       <Navbar />
-      <main id="main-content" className="relative z-0">
+      <main id="main-content" className="relative">
         <Hero />
         <Services />
         <Projects />

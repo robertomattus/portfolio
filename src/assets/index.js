@@ -1,4 +1,6 @@
 import profileImage from "@/assets/images/profile-image.png";
+import avatarAbout from "@/assets/images/avatar-about.png";
+import avatarHero from "@/assets/images/avatar-hero.png";
 import analyze from "@/assets/images/analyze.png";
 import analyze1 from "@/assets/images/analyze1.png";
 import analyze2 from "@/assets/images/analyze2.png";
@@ -37,6 +39,8 @@ import flexstrong4 from "./images/flexstrong4.png";
 
 export const images = {
   profileImage,
+  avatarAbout,
+  avatarHero,
   pilates,
   pilates1,
   pilates2,

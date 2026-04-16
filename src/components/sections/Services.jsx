@@ -75,22 +75,24 @@ const Services = () => {
     window.open(
       "https://www.canva.com/design/DAG5L63V7Ac/MFg0o1DSFS94R-Y9amAjAg/view",
       "_blank",
-      "noopener,noreferrer"
+      "noopener,noreferrer",
     );
   };
 
   return (
-    <section id="services" className="relative flex items-center min-h-[100svh] bg-transparent py-16 sm:py-24 overflow-hidden">
+    <section
+      id="services"
+      className="relative flex items-center min-h-[100svh] bg-transparent py-16 sm:py-24 overflow-hidden"
+    >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* ── Encabezado Editorial ── */}
         <div className="max-w-2xl mb-12 lg:mb-16 mx-auto lg:mx-0 text-center lg:text-left animate-fade-in-up">
           <h2 className="font-display font-extrabold text-[var(--color-text)] text-3xl sm:text-4xl tracking-tight mb-4">
             Servicios adaptados a la era digital.
           </h2>
           <p className="text-[var(--color-text-secondary)] text-base leading-relaxed">
-            Desde la concepción de la idea hasta el despliegue en producción. 
-            Combino diseño visual exigente con ingeniería de software robusta 
+            Desde la concepción de la idea hasta el despliegue en producción.
+            Combino diseño visual exigente con ingeniería de software robusta
             para crear soluciones que verdaderamente impactan.
           </p>
         </div>
@@ -106,15 +108,15 @@ const Services = () => {
               <div className="w-12 h-12 rounded-full bg-[var(--color-background-secondary)] flex items-center justify-center text-[var(--color-text)] mb-4 transition-colors duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
                 {service.icon}
               </div>
-              
+
               <h3 className="font-display font-bold text-lg text-[var(--color-text)] mb-2 leading-tight">
                 {service.title}
               </h3>
-              
+
               <p className="text-[var(--color-text-secondary)] text-[0.85rem] leading-relaxed mb-5 flex-1">
                 {service.description}
               </p>
-              
+
               <div className="text-sm font-medium text-[var(--color-text)] bg-[var(--color-background)] px-4 py-2.5 rounded-xl border border-[var(--color-border-subtle)] w-full">
                 <span className="text-[var(--color-primary)] mr-2">✦</span>
                 {service.solves}
@@ -129,9 +131,10 @@ const Services = () => {
             ¿Buscas conocer en detalle mi metodología?
           </h2>
           <p className="text-[#aaaaaa] text-base max-w-xl mx-auto mb-8">
-            Revisa la presentación completa ("Deck") sobre mi proceso de trabajo, tecnologías y cómo garantizamos resultados.
+            Revisa la presentación completa ("Deck") sobre mi proceso de
+            trabajo, tecnologías y cómo garantizamos resultados.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={handleViewPresentation}
@@ -149,7 +152,6 @@ const Services = () => {
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );

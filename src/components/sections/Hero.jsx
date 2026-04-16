@@ -25,8 +25,14 @@ const credentialCards = [
 
 const techStack = [
   { icon: <FaReact className="w-4 h-4 text-[#61DAFB]" />, label: "React" },
-  { icon: <SiNextdotjs className="w-4 h-4 text-[var(--color-text)]" />, label: "Next.js" },
-  { icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />, label: "TypeScript" },
+  {
+    icon: <SiNextdotjs className="w-4 h-4 text-[var(--color-text)]" />,
+    label: "Next.js",
+  },
+  {
+    icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
+    label: "TypeScript",
+  },
   { icon: <FaNodeJs className="w-4 h-4 text-[#68A063]" />, label: "Node.js" },
   { icon: <SiMongodb className="w-4 h-4 text-[#4DB33D]" />, label: "MongoDB" },
 ];
@@ -62,16 +68,11 @@ const Hero = () => {
       {/* ── Container ── */}
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-24 lg:py-16">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-
           {/* ── Columna izquierda: copy ── */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-
             {/* Eyebrow badge — disponibilidad */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[var(--color-primary-subtle)] border border-[#ffd0d8] rounded-full mb-6 animate-fade-in">
-              <span
-                className="relative flex h-2 w-2"
-                aria-hidden="true"
-              >
+              <span className="relative flex h-2 w-2" aria-hidden="true">
                 <span className="animate-pulse-dot absolute inline-flex h-full w-full rounded-full bg-[var(--color-primary)] opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-primary)]" />
               </span>
@@ -84,7 +85,10 @@ const Hero = () => {
             <h1
               id="hero-heading"
               className="font-display font-extrabold text-[var(--color-text)] leading-[1.08] tracking-tight mb-2 animate-fade-in-up"
-              style={{ fontSize: "clamp(2.2rem, 4vw, 3.8rem)", letterSpacing: "-0.02em" }}
+              style={{
+                fontSize: "clamp(2.2rem, 4vw, 3.8rem)",
+                letterSpacing: "-0.02em",
+              }}
             >
               Desarrollo
               <br />
@@ -99,7 +103,7 @@ const Hero = () => {
             </p>
 
             {/* Descripción */}
-            <p className="text-[var(--color-text-secondary)] text-base leading-relaxed max-w-sm mb-10 animate-fade-in-up delay-200">
+            <p className=" text-[var(--color-text-secondary)] text-base leading-relaxed max-w-sm mb-10 animate-fade-in-up delay-200">
               Transformo ideas en{" "}
               <strong className="text-[var(--color-text)] font-semibold">
                 productos digitales
@@ -126,13 +130,21 @@ const Hero = () => {
             </div>
 
             {/* Redes sociales */}
-            <div className="flex items-center gap-2 animate-fade-in delay-400" role="list" aria-label="Redes sociales">
+            <div
+              className="flex items-center gap-2 animate-fade-in delay-400"
+              role="list"
+              aria-label="Redes sociales"
+            >
               {socialLinks.map((social) => (
                 <a
                   key={social.ariaLabel}
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
-                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    social.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   aria-label={social.label}
                   role="listitem"
                   className="w-9 h-9 flex items-center justify-center rounded-full text-[var(--color-text-secondary)] hover:text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-text)] bg-white transition-all duration-200 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
@@ -145,22 +157,36 @@ const Hero = () => {
 
           {/* ── Imagen central (sólo desktop) ── */}
           <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[-1]">
-            <img 
-              src={images.avatarHero} 
-              alt="Avatar Hero" 
-              className="w-[280px] h-auto object-contain opacity-90 animate-float"
-              style={{ filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.05))" }}
+            <img
+              src={images.avatarHero}
+              alt="Avatar Hero"
+              className="w-[420px] max-w-none h-auto object-contain opacity-90 animate-float"
+              style={{
+                animationDuration: "8s",
+                animationDelay: "-3s",
+                filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.05))",
+                maskImage:
+                  "radial-gradient(circle at center, black 50%, transparent 100%)",
+                WebkitMaskImage:
+                  "radial-gradient(circle at center, black 50%, transparent 100%)",
+              }}
             />
           </div>
 
           {/* ── Columna derecha: tarjetas flotantes ── */}
-          <div className="hidden lg:flex flex-col items-end gap-3 animate-fade-in delay-200 animate-float" aria-hidden="true">
+          <div
+            className="hidden lg:flex flex-col items-end gap-3 animate-fade-in delay-200 animate-float"
+            aria-hidden="true"
+          >
             {/* Tarjetas de credenciales */}
             {credentialCards.map((card, i) => (
               <div
                 key={card.label}
                 className="bg-white border border-[var(--color-border)] rounded-2xl px-4 py-3 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow duration-300"
-                style={{ width: i === 1 ? "240px" : "210px", marginRight: i === 1 ? "0" : i === 0 ? "16px" : "8px" }}
+                style={{
+                  width: i === 1 ? "240px" : "210px",
+                  marginRight: i === 1 ? "0" : i === 0 ? "16px" : "8px",
+                }}
               >
                 <span className="text-xl" role="img" aria-label={card.label}>
                   {card.emoji}
